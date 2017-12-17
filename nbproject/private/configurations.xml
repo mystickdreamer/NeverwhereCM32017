@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <in>TestFile.c</in>
+      <in>act_comm.c</in>
+      <in>act_info.c</in>
+      <in>act_move.c</in>
+      <in>act_obj.c</in>
+      <in>act_wiz.c</in>
+      <in>arena.c</in>
+      <in>ban.c</in>
+      <in>birth.c</in>
+      <in>bits.c</in>
+      <in>bodyparts.c</in>
+      <in>build.c</in>
+      <in>city.c</in>
+      <in>clan.c</in>
+      <in>combat.c</in>
+      <in>comm.c</in>
+      <in>const.c</in>
+      <in>db.c</in>
+      <in>deity.c</in>
+      <in>elkandu.c</in>
+      <in>fight.c</in>
+      <in>grub.c</in>
+      <in>handler.c</in>
+      <in>hashstr.c</in>
+      <in>hiscores.c</in>
+      <in>house.c</in>
+      <in>house.h</in>
+      <in>i3.c</in>
+      <in>i3.h</in>
+      <in>i3cfg.h</in>
+      <in>ident.c</in>
+      <in>imc.c</in>
+      <in>imc.h</in>
+      <in>imccfg.h</in>
+      <in>interp.c</in>
+      <in>magic.c</in>
+      <in>makeobjs.c</in>
+      <in>makezone.c</in>
+      <in>md5.c</in>
+      <in>md5.h</in>
+      <in>medit.c</in>
+      <in>misc.c</in>
+      <in>mobchat.c</in>
+      <in>motd.c</in>
+      <in>mpxset.c</in>
+      <in>mud.h</in>
+      <in>mud_comm.c</in>
+      <in>mud_prog.c</in>
+      <in>namegen.c</in>
+      <in>oedit.c</in>
+      <in>olc.h</in>
+      <in>player.c</in>
+      <in>redit.c</in>
+      <in>reset.c</in>
+      <in>rx.h</in>
+      <in>save.c</in>
+      <in>services.c</in>
+      <in>shops.c</in>
+      <in>skills.c</in>
+      <in>special.c</in>
+      <in>tables.c</in>
+      <in>talent.c</in>
+      <in>track.c</in>
+      <in>update.c</in>
+    </df>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>3</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>.</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <in>TestFile.c</in>
+      <in>act_comm.c</in>
+      <in>act_info.c</in>
+      <in>act_move.c</in>
+      <in>act_obj.c</in>
+      <in>act_wiz.c</in>
+      <in>arena.c</in>
+      <in>ban.c</in>
+      <in>birth.c</in>
+      <in>bits.c</in>
+      <in>bodyparts.c</in>
+      <in>build.c</in>
+      <in>city.c</in>
+      <in>clan.c</in>
+      <in>combat.c</in>
+      <in>comm.c</in>
+      <in>const.c</in>
+      <in>db.c</in>
+      <in>deity.c</in>
+      <in>elkandu.c</in>
+      <in>fight.c</in>
+      <in>grub.c</in>
+      <in>handler.c</in>
+      <in>hashstr.c</in>
+      <in>hiscores.c</in>
+      <in>house.c</in>
+      <in>i3.c</in>
+      <in>ident.c</in>
+      <in>imc.c</in>
+      <in>interp.c</in>
+      <in>magic.c</in>
+      <in>makeobjs.c</in>
+      <in>makezone.c</in>
+      <in>md5.c</in>
+      <in>medit.c</in>
+      <in>misc.c</in>
+      <in>mobchat.c</in>
+      <in>motd.c</in>
+      <in>mpxset.c</in>
+      <in>mud_comm.c</in>
+      <in>mud_prog.c</in>
+      <in>namegen.c</in>
+      <in>oedit.c</in>
+      <in>player.c</in>
+      <in>redit.c</in>
+      <in>reset.c</in>
+      <in>save.c</in>
+      <in>services.c</in>
+      <in>shops.c</in>
+      <in>skills.c</in>
+      <in>special.c</in>
+      <in>tables.c</in>
+      <in>talent.c</in>
+      <in>track.c</in>
+      <in>update.c</in>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+          <cTool>
+            <incDir>
+              <pElem></pElem>
+            </incDir>
+          </cTool>
+        </makeTool>
+      </makefileType>
+      <item path="TestFile.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="act_comm.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="act_info.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="act_move.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="act_obj.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="act_wiz.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="arena.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="ban.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="birth.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="bits.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="bodyparts.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="build.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="city.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="clan.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="combat.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="comm.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="const.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="db.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="deity.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="elkandu.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="fight.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="grub.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="handler.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="hashstr.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="hiscores.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="house.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="i3.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="ident.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="imc.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="interp.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="magic.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="makeobjs.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="makezone.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="md5.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="medit.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="misc.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="mobchat.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="motd.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="mpxset.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="mud_comm.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="mud_prog.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="namegen.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="oedit.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="player.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="redit.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="reset.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="save.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="services.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="shops.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="skills.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="special.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="tables.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="talent.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="track.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="update.c" ex="false" tool="0" flavor2="2">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

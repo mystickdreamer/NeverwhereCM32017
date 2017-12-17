@@ -1,0 +1,8 @@
+/usr/bin/make -s rmexe
+  Now compiling... o/i3.o
+Assembler messages:
+Fatal error: can't create o/i3.o: No such file or directory
+Makefile:64: recipe for target 'o/i3.o' failed
+make[1]: *** [o/i3.o] Error 1
+Makefile:46: recipe for target 'all' failed
+make: *** [all] Error 2
