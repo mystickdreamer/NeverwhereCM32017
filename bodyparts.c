@@ -175,7 +175,7 @@ void check_bodyparts( CHAR_DATA * ch )
                break;
             case PART_GUTS:
                add_part( ch, BP_STOMACH, -1 );
-               add_part( ch, BP_ASS, -1 );
+               add_part( ch, BP_WAIST, -1 );
                break;
             case PART_ARMS:
                add_part( ch, BP_RARM, BP_CHEST );
@@ -188,8 +188,8 @@ void check_bodyparts( CHAR_DATA * ch )
                add_part( ch, BP_LHAND, BP_LWRIST );
                break;
             case PART_LEGS:
-               add_part( ch, BP_RLEG, BP_ASS );
-               add_part( ch, BP_LLEG, BP_ASS );
+               add_part( ch, BP_RLEG, BP_WAIST );
+               add_part( ch, BP_LLEG, BP_WAIST );
                add_part( ch, BP_RANKLE, BP_RLEG );
                add_part( ch, BP_LANKLE, BP_LLEG );
                break;
@@ -213,7 +213,7 @@ void check_bodyparts( CHAR_DATA * ch )
                add_part( ch, BP_FANGS, BP_HEAD );
                break;
             case PART_TAIL:
-               add_part( ch, BP_TAIL, BP_ASS );
+               add_part( ch, BP_TAIL, BP_WAIST );
                break;
             case PART_HORNS:
                add_part( ch, BP_RHORN, BP_HEAD );
@@ -224,8 +224,8 @@ void check_bodyparts( CHAR_DATA * ch )
                add_part( ch, BP_LFLEG, BP_CHEST );
                break;
             case PART_HAUNCH:
-               add_part( ch, BP_RRLEG, BP_ASS );
-               add_part( ch, BP_LRLEG, BP_ASS );
+               add_part( ch, BP_RRLEG, BP_WAIST );
+               add_part( ch, BP_LRLEG, BP_WAIST );
                break;
             case PART_EYE:
                add_part( ch, BP_REYE, BP_HEAD );
@@ -264,7 +264,7 @@ void check_bodyparts( CHAR_DATA * ch )
                break;
             case PART_GUTS:
                remove_part( ch, BP_STOMACH );
-               remove_part( ch, BP_ASS );
+               remove_part( ch, BP_WAIST );
                break;
             case PART_ARMS:
                remove_part( ch, BP_RARM );
@@ -340,12 +340,12 @@ void check_bodyparts( CHAR_DATA * ch )
        * comment out if you dont want anatomically correct chars 
        */ 
 /*      if( ch->sex == SEX_MALE || ch->sex == SEX_HERMAPH )
-      add_part( ch, BP_PENIS, BP_ASS );
+      add_part( ch, BP_PENIS, BP_WAIST );
    
    else
       remove_part( ch, BP_PENIS );
    if( ch->sex == SEX_FEMALE || ch->sex == SEX_HERMAPH )
-      add_part( ch, BP_VAGINA, BP_ASS );
+      add_part( ch, BP_VAGINA, BP_WAIST );
    
    else
       remove_part( ch, BP_VAGINA ); */
@@ -720,7 +720,7 @@ bool sever_part( CHAR_DATA * ch, PART_DATA * part )
        * parts that can't be severed 
        */ 
       if( part->loc == BP_CHEST 
-          ||part->loc == BP_ASS 
+          ||part->loc == BP_WAIST 
           ||part->loc == BP_VAGINA  ||part->loc == BP_STOMACH  ||part->loc == BP_BACK  ||part->loc == BP_FACE )
    {
       return FALSE;
