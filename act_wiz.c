@@ -5416,8 +5416,8 @@ void do_cedit( CHAR_DATA * ch, char *argument )
       send_to_char( "Syntax: cedit <command> [field]\n\r", ch );
       send_to_char( "\n\rField being one of:\n\r", ch );
       send_to_char( "  position log code flags permit\n\r", ch );
-      send_to_char( " Permit: admin, help, build, hibuild, security,"
-	      " talent, item, misc, channel, mob, (all none = same) ", ch);
+      send_to_char( " Permit: admin, help, build, hibuild, security,\n\r"
+	      "             talent, item, misc, channel, mob, (all none = same) ", ch);
       return;
    }
 
