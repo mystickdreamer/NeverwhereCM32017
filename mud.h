@@ -2269,6 +2269,8 @@ struct pc_data {
 	EXT_BV perm_aff; /* affects that dont come off automatically */
 	int noncombat[20];
 	int noncombat_exp[20];
+	int skills[20];
+	int skills_exp[20];
 	CHAR_DATA *consenting;
 	char *parent; /* the mother,father or sire of ch */
 	char *auto_attack;
