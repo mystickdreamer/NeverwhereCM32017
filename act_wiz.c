@@ -5622,7 +5622,7 @@ void do_cedit( CHAR_DATA * ch, char *argument )
    if( !str_cmp( arg2, "permit" ) )
    {
       int flag;
-      if( !str_cmp( argument, "none" ) )
+      if( !str_cmp( argument, "none" ) || !str_cmp( argument, "all") )
       {
          command->permit = 0;
       }
