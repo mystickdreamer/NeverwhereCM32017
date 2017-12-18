@@ -5326,9 +5326,9 @@ void obj_change( CHAR_DATA * ch, OBJ_DATA * obj, int type, int power, char *argu
             if( xIS_SET( obj->parts, BP_LHAND ) )
                add_part( mob, BP_LHAND, BP_LWRIST );
             if( xIS_SET( obj->parts, BP_RLEG ) )
-               add_part( mob, BP_RLEG, BP_ASS );
+               add_part( mob, BP_RLEG, BP_WAIST );
             if( xIS_SET( obj->parts, BP_LLEG ) )
-               add_part( mob, BP_LLEG, BP_ASS );
+               add_part( mob, BP_LLEG, BP_WAIST );
             if( xIS_SET( obj->parts, BP_RFOOT ) )
                add_part( mob, BP_RANKLE, BP_RLEG );
             if( xIS_SET( obj->parts, BP_LANKLE ) )
@@ -5337,8 +5337,8 @@ void obj_change( CHAR_DATA * ch, OBJ_DATA * obj, int type, int power, char *argu
                add_part( mob, BP_RFOOT, BP_RANKLE );
             if( xIS_SET( obj->parts, BP_LFOOT ) )
                add_part( mob, BP_LFOOT, BP_LANKLE );
-            if( xIS_SET( obj->parts, BP_ASS ) )
-               add_part( mob, BP_ASS, -1 );
+            if( xIS_SET( obj->parts, BP_WAIST ) )
+               add_part( mob, BP_WAIST, -1 );
             if( xIS_SET( obj->parts, BP_NOSE ) )
                add_part( mob, BP_BACK, -1 );
             if( xIS_SET( obj->parts, BP_RWING ) )
@@ -5356,7 +5356,7 @@ void obj_change( CHAR_DATA * ch, OBJ_DATA * obj, int type, int power, char *argu
             if( xIS_SET( obj->parts, BP_CLAWS ) )
                add_part( mob, BP_CLAWS, BP_RPAW );
             if( xIS_SET( obj->parts, BP_TAIL ) )
-               add_part( mob, BP_TAIL, BP_ASS );
+               add_part( mob, BP_TAIL, BP_WAIST );
             if( xIS_SET( obj->parts, BP_FANGS ) )
                add_part( mob, BP_FANGS, BP_HEAD );
             if( xIS_SET( obj->parts, BP_RFLEG ) )
@@ -5364,9 +5364,9 @@ void obj_change( CHAR_DATA * ch, OBJ_DATA * obj, int type, int power, char *argu
             if( xIS_SET( obj->parts, BP_LFLEG ) )
                add_part( mob, BP_LFLEG, BP_CHEST );
             if( xIS_SET( obj->parts, BP_RRLEG ) )
-               add_part( mob, BP_RRLEG, BP_ASS );
+               add_part( mob, BP_RRLEG, BP_WAIST );
             if( xIS_SET( obj->parts, BP_LRLEG ) )
-               add_part( mob, BP_LRLEG, BP_ASS );
+               add_part( mob, BP_LRLEG, BP_WAIST );
             if( xIS_SET( obj->parts, BP_RFIN ) )
                add_part( mob, BP_RFIN, BP_CHEST );
             if( xIS_SET( obj->parts, BP_LFIN ) )
