@@ -594,10 +594,10 @@ void do_skills( CHAR_DATA * ch, char *argument )
 	  set_pager_color( AT_MAGIC, ch );
 	  pager_printf_color( ch,
                                 " ----------------------------------&CNonCombat Skills&B----------------------------\n\r");
-	  pager_printf_color(ch, " 	    Smithing: &C%d&B		Alchemy: &C%d&B		Tailoring: &C%d&B\n\r", ch->pcdata->noncombat[SK_SMITH], ch->pcdata->noncombat[SK_ALCHEMY], ch->pcdata->noncombat[SK_TAILOR]);
-	  pager_printf_color(ch, " 	      Mining: &C%d&B		 Nature: &C%d&B		  Jewelry: &C%d&B\n\r", ch->pcdata->noncombat[SK_MINING], ch->pcdata->noncombat[SK_NATURE], ch->pcdata->noncombat[SK_JEWEL]);
-	  pager_printf_color(ch, " 	     Stealth: &C%d&B		       Medicine: &C%d&B	       Streetwise: &C%d&B\n\r", ch->pcdata->noncombat[SK_STEALTH], ch->pcdata->noncombat[SK_MEDICINE], ch->pcdata->noncombat[SK_STREET]);
-	  pager_printf_color(ch, " 	  Channeling: &C%d&B\n\r", ch->pcdata->noncombat[SK_CHANNEL]);
+	  pager_printf_color(ch, " 	    Smithing: &C%5d&B		Alchemy: &C%5d&B		Tailoring: &C%5d&B\n\r", ch->pcdata->noncombat[SK_SMITH], ch->pcdata->noncombat[SK_ALCHEMY], ch->pcdata->noncombat[SK_TAILOR]);
+	  pager_printf_color(ch, " 	      Mining: &C%d&B		 Nature: &C%5d&B		  Jewelry: &C%5d&B\n\r", ch->pcdata->noncombat[SK_MINING], ch->pcdata->noncombat[SK_NATURE], ch->pcdata->noncombat[SK_JEWEL]);
+	  pager_printf_color(ch, " 	     Stealth: &C%5d&B		       Medicine: &C%5d&B	       Streetwise: &C%5d&B\n\r", ch->pcdata->noncombat[SK_STEALTH], ch->pcdata->noncombat[SK_MEDICINE], ch->pcdata->noncombat[SK_STREET]);
+	  pager_printf_color(ch, " 	  Channeling: &C%5d&B\n\r", ch->pcdata->noncombat[SK_CHANNEL]);
 
 
 /* This is the old way to list non combat skills
