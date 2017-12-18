@@ -141,7 +141,7 @@ char *const part_locs[] =
    "right wing", "left wing",     "right ear",    "left ear",       "horn",
    "right horn", "left horn",     "tongue",       "fangs",          "tentacles",
    "beak",       "right foreleg", "left foreleg", "right rear leg", "left rear leg",
-   "ass",        "face",          "right fin",    "left fin",       "dorsal fin",    "penis",      "vagina",        "claws" 
+   "waist",        "face",          "right fin",    "left fin",       "dorsal fin",    "penis",      "vagina",        "claws" 
 };
 char *const weapon_skill[20] = 
    { "Combat", "Swords", "Daggers and Knives", "Axes", "Whips and Flails", "Maces and Clubs", "Wands and Lasers",
