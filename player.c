@@ -592,6 +592,7 @@ void do_skills( CHAR_DATA * ch, char *argument )
       }
 	  
 	  set_pager_color( AT_MAGIC, ch );
+	  pager_printf_color( ch, "\n\r");
 	  pager_printf_color( ch,
                                 " ----------------------------------&CNonCombat Skills&B----------------------------\n\r");
 	  pager_printf_color(ch, " 	    Smithing: &C%5d&B		Alchemy: &C%5d&B		Tailoring: &C%5d&B\n\r", ch->pcdata->noncombat[SK_SMITH], ch->pcdata->noncombat[SK_ALCHEMY], ch->pcdata->noncombat[SK_TAILOR]);
