@@ -26,7 +26,7 @@ C_FILES = act_comm.c act_info.c act_move.c act_obj.c act_wiz.c \
 	  interp.c magic.c makeobjs.c makezone.c md5.c misc.c mpxset.c \
 	  mud_comm.c mud_prog.c namegen.c player.c reset.c \
 	  save.c shops.c skills.c special.c tables.c talent.c \
-	  track.c update.c
+	  track.c update.c house.c oedit.c redit.c medit.c
 
 O_FILES = $(patsubst %.c,o/%.o,$(C_FILES))
 
@@ -43,7 +43,7 @@ ifdef I3
 endif
 
 all:
-	$(MAKE) -s rmexe
+	make -s rmexe
 
 rmexe: $(O_FILES)
 	rm -f rmexe

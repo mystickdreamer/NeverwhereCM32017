@@ -638,7 +638,6 @@ CHAR_DATA *generate_mob( NATION_DATA * nation )
    mob->perm_con = 100 + nation->con_mod;
    mob->perm_per = 100 + nation->cha_mod;
    mob->perm_lck = 100 + nation->lck_mod;
-   mob->skinamount = 0;
 
    mob->susceptible = nation->suscept;
    mob->speed = 100;
@@ -675,7 +674,6 @@ CHAR_DATA *generate_mob( NATION_DATA * nation )
          mob->perm_con += 50;
          mob->perm_lck += 50;
          mob->perm_per += 50;
-         mob->skinamount += 20;
       }
       switch ( number_range( 1, 10 ) )
       {
@@ -2258,8 +2256,7 @@ void make_corpse( CHAR_DATA * ch )
    OBJ_DATA *obj_next;
    MATERIAL_DATA *material;
    PART_DATA *part;
-   char *name, skinamount, hide_type;
-   
+   char *name;
 
    if( IS_AFFECTED( ch, AFF_NO_CORPSE ) )
    {
@@ -2293,15 +2290,8 @@ void make_corpse( CHAR_DATA * ch )
 
    if( IS_NPC( ch ) )
    {
-       // This is how we transfer the name from a mob to the corpse
       name = ch->short_descr;
-      // gotta transfer how much skinning the mob has to the corpse which is an object
-      skinamount = ch->skinamount;
-      hide_type = ch->hide_type;
       corpse = create_object( get_obj_index( OBJ_VNUM_CORPSE_NPC ), 0 );
-      corpse->skinamount = skinamount;
-      corpse->hide_type = hide_type;
-      // adding a timer for the corpse
       corpse->timer = 6;
       if( ch->gold > 0 )
       {
@@ -2312,9 +2302,6 @@ void make_corpse( CHAR_DATA * ch )
          obj_to_obj( create_money( ch->gold ), corpse );
          ch->gold = 0;
       }
-
-     
-      
 
       /*
        * Using corpse cost to cheat, since corpses not sellable 
@@ -2338,8 +2325,6 @@ void make_corpse( CHAR_DATA * ch )
       name = ch->nation->name;
 
    corpse->weight = ch->weight;
-
-   
    corpse->material = NULL;
 
    corpse->value[0] = ch->perm_str;
@@ -2396,13 +2381,11 @@ void make_corpse( CHAR_DATA * ch )
    {
       for( material = first_material; material; material = material->next )
       {
-         if( ( material->race == ch->race ) )
+         if( ( material->race == ch->race ) && ( number_percent(  ) < material->rarity ) )
          {
-	  /*obj = make_ore( material->number );
+            obj = make_ore( material->number );
             if( obj )
-               obj_to_obj( obj, corpse );*/
-	     
-	     corpse->material = material;
+               obj_to_obj( obj, corpse );
          }
       }
    }

@@ -2859,12 +2859,12 @@ void do_stand( CHAR_DATA * ch, char *argument )
          {
             if( number_range( 1, 100 ) > get_curr_str( ch ) )
             {
-               send_to_char( "Your are stuck to the floor.\n\r", ch );
+               send_to_char( "Your ass is stuck to the floor.\n\r", ch );
                return;
             }
             else
             {
-               send_to_char( "You pry yourself off the floor.\n\r", ch );
+               send_to_char( "You pry your ass off the floor.\n\r", ch );
             }
          }
 

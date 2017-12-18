@@ -69,6 +69,11 @@ void huh( CHAR_DATA * ch )
          ch_printf( ch, "What%s?\n\r", ( number_range( 1, 2 ) == 1 ? " was that again" : "" ) );
          break;
       case 3:
+         if( ch->sex == 2 )
+            send_to_char( "Are you typing with your tits again?\n\r", ch );
+         else if( ch->sex == 1 )
+            send_to_char( "Get thy testicles off the keyboard!\n\r", ch );
+         else
             send_to_char( "Nothing happens.\n\r", ch );
          break;
       case 4:
@@ -1800,31 +1805,28 @@ int apply_ac( OBJ_DATA * obj, int iWear )
    return 0;
 }
 
-
-
-/*
- * Find a piece of eq on a character.
- * Will pick the top layer if clothing is layered.		-Thoric
- */
 OBJ_DATA *get_eq_char( CHAR_DATA * ch, int iWear )
 {
-   OBJ_DATA *obj, *maxobj = NULL;
+   PART_DATA * part;
 
-   for( obj = ch->first_carrying; obj; obj = obj->next_content )
-      if( obj->wear_loc == iWear )
-      {
-         if( !obj->pIndexData->layers )
-         {
-            return obj;
-         }
-         else
-         {
-            if( !maxobj || obj->pIndexData->layers > maxobj->pIndexData->layers )
-               maxobj = obj;
-         }
-      }
+   /* Check the main and off hand spots when needed */
+   if( iWear == -1 )
+      return ch->main_hand;
+   if( iWear == -2 )
+      return ch->off_hand;
 
-   return maxobj;
+   /* Check the body parts now */
+   for( part = ch->first_part; part; part = part->next )
+   {
+      /* If we aren't checking this location continue on */
+      if( part->loc != iWear )
+         continue;
+
+      /* Only the top part should be actually usable */
+      return outer_layer( part );
+   }
+
+   return NULL;
 }
 
 /*
@@ -3111,13 +3113,12 @@ bool can_see( CHAR_DATA * ch, CHAR_DATA * victim )
    /*
     * SB 
     */
-    
    if( !IS_NPC( ch ) && xIS_SET( ch->act, PLR_HOLYLIGHT ) )
       return TRUE;
-    
-    
-   if( IS_NPC( victim ) && xIS_SET( victim->act, ACT_MOBINVIS ) ) //&& TALENT( ch, TAL_SEEKING ) < victim->mobinvis )
+	
+   if( IS_NPC( victim ) && xIS_SET( victim->act, ACT_MOBINVIS ) && TALENT( ch, TAL_SEEKING ) < victim->mobinvis )
       return FALSE;
+
 
 
    /*

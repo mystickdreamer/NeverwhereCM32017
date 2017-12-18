@@ -1287,7 +1287,75 @@ void do_slap( CHAR_DATA * ch, char *argument )
    process_attack( ch, argument, 20, MAG_BLUNT, NULL, SK_HAND );
 }
 
+/* If you don't want these commands, comment out this section */
 
+void do_piss( CHAR_DATA * ch, char *argument )
+{
+   char buf[MAX_STRING_LENGTH];
+   OBJ_DATA *obj;
+   PART_DATA *part;
+   CHAR_DATA *victim;
+
+   if( IS_NPC( ch ) || ch->pcdata->condition[COND_THIRST] < 10 )
+   {
+      send_to_char( "Nothing comes out.\n\r", ch );
+      return;
+   }
+
+   if( ( part = find_bodypart( ch, BP_PENIS ) ) != NULL )
+   {
+      if( part->obj )
+      {
+         act( AT_YELLOW, "You piss your pants.", ch, NULL, NULL, TO_CHAR );
+         act( AT_YELLOW, "$n pisses $s pants.", ch, NULL, NULL, TO_ROOM );
+         return;
+      }
+   }
+   else if( ( part = find_bodypart( ch, BP_VAGINA ) ) != NULL )
+   {
+      if( part->obj )
+      {
+         act( AT_YELLOW, "You piss your pants.", ch, NULL, NULL, TO_CHAR );
+         act( AT_YELLOW, "$n pisses $s pants.", ch, NULL, NULL, TO_ROOM );
+         return;
+      }
+   }
+
+   victim = find_target( ch, argument, TRUE );
+
+   if( victim && ( can_use_bodypart( ch, BP_PENIS ) || IS_AFFECTED( ch, AFF_FLYING ) || victim->position < POS_SQUATTING ) )
+   {
+      act( AT_YELLOW, "You piss on $N!", ch, NULL, victim, TO_CHAR );
+      act( AT_YELLOW, "$n pisses on you!", ch, NULL, victim, TO_VICT );
+      act( AT_YELLOW, "$n pisses on $N!", ch, NULL, victim, TO_NOTVICT );
+   }
+   else
+   {
+      act( AT_YELLOW, "You take a piss on the floor.", ch, NULL, NULL, TO_CHAR );
+      act( AT_YELLOW, "$n takes a piss on the floor.", ch, NULL, NULL, TO_ROOM );
+   }
+
+   obj = obj_to_room( create_object( get_obj_index( OBJ_VNUM_PUDDLE ), 0 ), ch->in_room );
+   obj->value[1] = 10;
+   obj->value[0] = 10;
+   obj->value[2] = 8;
+   obj->timer = 5;
+   gain_condition( ch, COND_THIRST, -10 );
+
+   sprintf( buf, obj->name, liq_table[obj->value[2]] );
+   STRFREE( obj->name );
+   obj->name = STRALLOC( buf );
+
+   sprintf( buf, obj->short_descr, liq_table[obj->value[2]] );
+   STRFREE( obj->short_descr );
+   obj->short_descr = STRALLOC( buf );
+   STRFREE( ch->last_taken );
+   ch->last_taken = STRALLOC( "relieving yourself" );
+   WAIT_STATE( ch, 10 );
+   return;
+}
+
+/* end gross section */
 
 /* START WEAPONS SECTION */
 

@@ -1276,11 +1276,6 @@ void do_ostat( CHAR_DATA * ch, char *argument )
    ch_printf_color( ch, "&cIn room: &w%d  ", obj->in_room == NULL ? 0 : obj->in_room->vnum );
    ch_printf_color( ch, "&cIn object: &w%s  ", obj->in_obj == NULL ? "(none)" : obj->in_obj->short_descr );
    ch_printf_color( ch, "&cCarried by: &C%s\n\r", obj->carried_by == NULL ? "(none)" : obj->carried_by->name );
-   if( obj->item_type == ITEM_CORPSE_NPC )
-   {
-   ch_printf_color( ch, "&cSkinningamount: &w%d Hidetype: &w%d \n\r", obj->skinamount, obj->hide_type );
-   }
-   
    ch_printf_color( ch, "&cIndex Values : &w%d %d %d %d %d %d %d.\n\r",
                     obj->pIndexData->value[0], obj->pIndexData->value[1],
                     obj->pIndexData->value[2], obj->pIndexData->value[3],
@@ -1434,12 +1429,12 @@ void do_mstat( CHAR_DATA * ch, char *argument )
                        victim->saving_poison_death, victim->saving_wand, victim->saving_para_petri, victim->saving_breath,
                        victim->saving_spell_staff, victim->carry_number, can_carry_n( victim ), victim->carry_weight,
                        can_carry_w( victim ), victim->weight );
-   pager_printf_color( ch, "&cSecs: &w%d  &cTimer: &w%d  &cGold: &Y%ld \n\r", ( int )victim->played, victim->timer,
+   pager_printf_color( ch, "&cSecs: &w%d  &cTimer: &w%d  &cGold: &Y%ld", ( int )victim->played, victim->timer,
                        victim->gold );
    if( IS_NPC( victim ) )
-      pager_printf_color( ch, "&cSkinamount: &w%d Hidetype: &w%d\r\n", victim->skinamount, victim->hide_type );
+      pager_printf_color( ch, "\r\n" );
    else
-      pager_printf_color( ch, "&cBank: &w%ld  &cBounty: &w%d\r\n", victim->pcdata->balance, victim->pcdata->bounty );
+      pager_printf_color( ch, "  &cBank: &w%ld  &cBounty: &w%d\r\n", victim->pcdata->balance, victim->pcdata->bounty );
    pager_printf_color( ch, "&cWorth: &w%-4d\r\n", IS_NPC( victim ) ? get_exp_worth( victim ) : get_char_worth( victim ) );
    if( get_timer( victim, TIMER_PKILLED ) )
       pager_printf_color( ch, "&cTimerKilled:  &R%d\n\r", get_timer( victim, TIMER_PKILLED ) );

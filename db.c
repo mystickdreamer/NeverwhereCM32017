@@ -1005,8 +1005,6 @@ void load_mobiles( AREA_DATA * tarea, FILE * fp )
          pMobIndex->perm_con = fread_number( fp );
          pMobIndex->perm_per = fread_number( fp );
          pMobIndex->perm_lck = fread_number( fp );
-         pMobIndex->skinamount = fread_number( fp );
-         pMobIndex->hide_type = fread_number( fp );
          pMobIndex->saving_poison_death = fread_number( fp );
          pMobIndex->saving_wand = fread_number( fp );
          pMobIndex->saving_para_petri = fread_number( fp );
@@ -1052,8 +1050,6 @@ void load_mobiles( AREA_DATA * tarea, FILE * fp )
          pMobIndex->perm_per = 100;
          pMobIndex->perm_con = 100;
          pMobIndex->perm_lck = 100;
-         pMobIndex->skinamount = 0;
-         pMobIndex->hide_type = 0;
          pMobIndex->race = 0;
          pMobIndex->xflags = 0;
          pMobIndex->resistant = 0;
@@ -2479,7 +2475,6 @@ CHAR_DATA *create_mobile( MOB_INDEX_DATA * pMobIndex )
    mob->perm_con = pMobIndex->perm_con;
    mob->perm_per = pMobIndex->perm_per;
    mob->perm_lck = pMobIndex->perm_lck;
-   mob->skinamount = pMobIndex->skinamount;
    mob->hitroll = pMobIndex->hitroll;
    mob->damroll = pMobIndex->damroll;
    mob->race = pMobIndex->race;
@@ -2683,7 +2678,6 @@ OBJ_DATA *create_object( OBJ_INDEX_DATA * pObjIndex, int level )
       case ITEM_QUIVER:
       case ITEM_SHOVEL:
       case ITEM_PROJECTILE:
-      case ITEM_CARVINGKNIFE:
          break;
 
       case ITEM_SALVE:
@@ -2798,7 +2792,6 @@ void clear_char( CHAR_DATA * ch )
    ch->perm_per = 23;
    ch->perm_con = 23;
    ch->perm_lck = 23;
-   ch->skinamount = 0;
    ch->mod_str = 0;
    ch->mod_dex = 0;
    ch->mod_int = 0;
@@ -5186,7 +5179,6 @@ MOB_INDEX_DATA *make_mobile( int vnum, int cvnum, char *name )
       pMobIndex->perm_per = 13;
       pMobIndex->perm_con = 13;
       pMobIndex->perm_lck = 13;
-      pMobIndex->skinamount = 0;
       pMobIndex->race = 0;
       pMobIndex->xflags = 0;
       pMobIndex->resistant = 0;
@@ -5225,7 +5217,6 @@ MOB_INDEX_DATA *make_mobile( int vnum, int cvnum, char *name )
       pMobIndex->perm_per = cMobIndex->perm_per;
       pMobIndex->perm_con = cMobIndex->perm_con;
       pMobIndex->perm_lck = cMobIndex->perm_lck;
-      pMobIndex->skinamount = cMobIndex->skinamount;
       pMobIndex->race = cMobIndex->race;
       pMobIndex->xflags = cMobIndex->xflags;
       pMobIndex->resistant = cMobIndex->resistant;
@@ -6022,7 +6013,6 @@ void load_materials( void )
                   material->sector = 5;
                   material->magic = 100;
                   material->race = -1;
-                  material->skin = -1;
                   xCLEAR_BITS( material->extra_flags );
                   material->first_affect = NULL;
                }
@@ -6091,7 +6081,6 @@ void load_materials( void )
          case 'S':
             KEY( "Sector", material->sector, fread_number( fp ) );
             KEY( "Short", material->short_descr, fread_string( fp ) );
-            KEY( "Skin", material->skin, fread_number( fp ) );
             break;
          case 'W':
             KEY( "Weight", material->weight, fread_number( fp ) );

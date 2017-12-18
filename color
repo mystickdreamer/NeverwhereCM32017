@@ -1,0 +1,123 @@
+act_info.c:1934:            if( ( moon->up ) && ( !str_cmp( moon->world, ch->in_room->area->resetmsg ) ) )
+act_info.c:1937:                        capitalize( aoran( moon->color ) ), moon_phase[moon->phase] );
+act_info.c:1940:            moon = moon->next;
+act_info.c:2102:         if( ( moon->up ) && ( !str_cmp( moon->world, ch->in_room->area->resetmsg ) ) )
+act_info.c:2105:                     capitalize( aoran( moon->color ) ), moon_phase[moon->phase] );
+act_info.c:2108:         moon = moon->next;
+build.c:4243:         sprintf( buf, "%s\r\n", moon->name );
+build.c:4245:         moon = moon->next;
+build.c:4257:      sprintf( buf, "Moon %s:\r\n", moon->name );
+build.c:4259:      sprintf( buf, "Color: %s&w\r\n", moon->color );
+build.c:4261:      sprintf( buf, "World: %s\r\n", moon->world );
+build.c:4263:      sprintf( buf, "Rising time: %d  Setting time: %d\r\n", moon->rise, moon->set );
+build.c:4265:      sprintf( buf, "Current phase: %d \r\n", moon->phase );
+build.c:4267:      sprintf( buf, "Currently up: %d  Currently waning: %d\n\r", moon->up, moon->waning );
+build.c:4269:      sprintf( buf, "Type: %d\r\n", moon->type );
+build.c:4278:                        if (!str_cmp(moon->name, arg2)) {
+build.c:4279:                                sprintf(buf, "moon %s deleted.\r\n", moon->name);
+build.c:4281:                                        first_moon=moon->next;
+build.c:4283:                                        last_moon=moon->prev;
+build.c:4284:                                if (moon->prev)
+build.c:4285:                                        moon->prev->next=moon->next;
+build.c:4286:                                if (moon->next)
+build.c:4287:                                        moon->next->prev=moon->prev;
+build.c:4288:                                STRFREE(moon->name);
+build.c:4289:                                STRFREE(moon->color);
+build.c:4290:                                STRFREE(moon->world);
+build.c:4296:                                moon=moon->next;
+build.c:4313:         last_moon->next = new_moon;
+build.c:4314:         new_moon->prev = last_moon;
+build.c:4319:         moon->name = str_dup( arg2 );
+build.c:4321:         moon->name = str_dup( "newmoon" );
+build.c:4322:      moon->color = str_dup( "white" );
+build.c:4323:      moon->world = str_dup( "Nowhere" );
+build.c:4324:      moon->phase = PHASE_NEW;
+build.c:4325:      moon->rise = 16;
+build.c:4326:      moon->set = 6;
+build.c:4327:      moon->type = 0;
+build.c:4328:      moon->up = FALSE;
+build.c:4329:      moon->waning = FALSE;
+build.c:4330:      sprintf( buf, "moon %s created.\r\n", moon->name );
+build.c:4337:      moon->up = TRUE;
+build.c:4338:      sprintf( buf, "moon %s now in the sky.\n\r", moon->name );
+build.c:4345:      moon->up = FALSE;
+build.c:4346:      sprintf( buf, "moon %s no longer in the sky.\n\r", moon->name );
+build.c:4360:         moon->name = str_dup( arg4 );
+build.c:4366:         moon->color = str_dup( arg4 );
+build.c:4372:         moon->world = str_dup( arg4 );
+build.c:4383:         moon->rise = atoi( arg4 );
+build.c:4394:         moon->set = atoi( arg4 );
+build.c:4405:         moon->phase = atoi( arg4 );
+build.c:4418:         moon->type = i;
+build.c:4429:         moon->phase = number_range( 0, 4 );
+build.c:4430:         moon->waning = number_range( 0, 1 );
+build.c:4431:         moon->rise = number_range( 0, 23 );
+build.c:4432:         moon->set = number_range( 0, 23 );
+build.c:4433:         moon = moon->next;
+build.c:4449:      for( moon = first_moon; moon; moon = moon->next )
+build.c:4452:         fprintf( fp, "Name       %s~\n", moon->name );
+build.c:4453:         fprintf( fp, "Color      %s~\n", moon->color );
+build.c:4454:         fprintf( fp, "World      %s~\n", moon->world );
+build.c:4455:         fprintf( fp, "Phase      %d\n", moon->phase );
+build.c:4456:         fprintf( fp, "Set        %d\n", moon->set );
+build.c:4457:         fprintf( fp, "Rise       %d\n", moon->rise );
+build.c:4458:         fprintf( fp, "Type       %d\n", moon->type );
+db.c:6751:                  last_moon->next = new_moon;
+db.c:6752:                  new_moon->prev = last_moon;
+db.c:6756:               moon->name = str_dup( "newmoon" );
+db.c:6757:               moon->color = str_dup( "white" );
+db.c:6758:               moon->world = str_dup( "Nowhere" );
+db.c:6759:               moon->phase = 0;
+db.c:6760:               moon->rise = 16;
+db.c:6761:               moon->set = 6;
+db.c:6762:               moon->type = 0;
+db.c:6763:               moon->up = FALSE;
+db.c:6764:               moon->waning = FALSE;
+db.c:6772:            KEY( "Color", moon->color, fread_string( fp ) );
+db.c:6775:            KEY( "Name", moon->name, fread_string( fp ) );
+db.c:6778:            KEY( "Phase", moon->phase, fread_number( fp ) );
+db.c:6781:            KEY( "Rise", moon->rise, fread_number( fp ) );
+db.c:6784:            KEY( "Set", moon->set, fread_number( fp ) );
+db.c:6787:            KEY( "Type", moon->type, fread_number( fp ) );
+db.c:6790:            KEY( "World", moon->world, fread_string( fp ) );
+handler.c:140:         if( moon->up && !str_cmp( moon->world, room->area->resetmsg ) )
+handler.c:141:            light += moon->phase;
+handler.c:142:         moon = moon->next;
+handler.c:195:      if( moon->world == NULL || moon->world[0] == '\0' )
+handler.c:197:      if( moon->type == flag && moon->up && !str_cmp( moon->world, tarea->resetmsg ) )
+handler.c:198:         amt += moon->phase;
+handler.c:199:      moon = moon->next;
+handler.c:4868:      if( !str_cmp( moon->name, name ) )
+handler.c:4870:      moon = moon->next;
+update.c:2925:            if( moon->phase == PHASE_FULL )
+update.c:2926:               moon->waning = TRUE;
+update.c:2927:            if( moon->phase == PHASE_NEW )
+update.c:2928:               moon->waning = FALSE;
+update.c:2929:            if( moon->waning )
+update.c:2930:               moon->phase--;
+update.c:2933:               moon->phase++;
+update.c:2934:            moon = moon->next;
+update.c:2941:      if( moon->rise == time_info.hour )
+update.c:2946:            if( d->connected == CON_PLAYING && !str_cmp( d->character->in_room->area->resetmsg, moon->world )
+update.c:2950:               ch_printf( d->character, "^x&CThe %s %s moon slowly rises.\n\r", moon->color, moon_phase[moon->phase] );
+update.c:2953:         moon->up = TRUE;
+update.c:2955:      else if( moon->set == time_info.hour )
+update.c:2960:            if( d->connected == CON_PLAYING && !str_cmp( d->character->in_room->area->resetmsg, moon->world )
+update.c:2964:               ch_printf( d->character, "^x&CThe %s %s moon slowly sets.\n\r", moon->color, moon_phase[moon->phase] );
+update.c:2967:         moon->up = FALSE;
+update.c:2969:      moon = moon->next;
+vegetation:44:act_info.c:1934:            if( ( moon->up ) && ( !str_cmp( moon->world, ch->in_room->area->resetmsg ) ) )
+vegetation:49:act_info.c:2102:         if( ( moon->up ) && ( !str_cmp( moon->world, ch->in_room->area->resetmsg ) ) )
+vegetation:604:handler.c:140:         if( moon->up && !str_cmp( moon->world, room->area->resetmsg ) )
+vegetation:1238:update.c:2946:            if( d->connected == CON_PLAYING && !str_cmp( d->character->in_room->area->resetmsg, moon->world )
+vegetation:1239:update.c:2960:            if( d->connected == CON_PLAYING && !str_cmp( d->character->in_room->area->resetmsg, moon->world )
+vegetation:1283:water:44:act_info.c:1934:            if( ( moon->up ) && ( !str_cmp( moon->world, ch->in_room->area->resetmsg ) ) )
+vegetation:1288:water:49:act_info.c:2102:         if( ( moon->up ) && ( !str_cmp( moon->world, ch->in_room->area->resetmsg ) ) )
+vegetation:1843:water:604:handler.c:140:         if( moon->up && !str_cmp( moon->world, room->area->resetmsg ) )
+vegetation:2477:water:1238:update.c:2946:            if( d->connected == CON_PLAYING && !str_cmp( d->character->in_room->area->resetmsg, moon->world )
+vegetation:2478:water:1239:update.c:2960:            if( d->connected == CON_PLAYING && !str_cmp( d->character->in_room->area->resetmsg, moon->world )
+water:44:act_info.c:1934:            if( ( moon->up ) && ( !str_cmp( moon->world, ch->in_room->area->resetmsg ) ) )
+water:49:act_info.c:2102:         if( ( moon->up ) && ( !str_cmp( moon->world, ch->in_room->area->resetmsg ) ) )
+water:604:handler.c:140:         if( moon->up && !str_cmp( moon->world, room->area->resetmsg ) )
+water:1238:update.c:2946:            if( d->connected == CON_PLAYING && !str_cmp( d->character->in_room->area->resetmsg, moon->world )
+water:1239:update.c:2960:            if( d->connected == CON_PLAYING && !str_cmp( d->character->in_room->area->resetmsg, moon->world )

@@ -37,7 +37,7 @@ void do_mpmset( CHAR_DATA * ch, char *argument )
    char outbuf[MAX_STRING_LENGTH];
    CHAR_DATA * victim;
    int value;
-   int minattr, maxattr, minskin, maxskin;
+   int minattr, maxattr;
    
       /*
        * A desc means switched.. too many loopholes if we allow that.. 
@@ -75,9 +75,6 @@ void do_mpmset( CHAR_DATA * ch, char *argument )
    {
       minattr = 1;
       maxattr = 100;
-      minskin = 0;
-      maxskin = 4;
-     
    }
    
    else
@@ -89,19 +86,6 @@ void do_mpmset( CHAR_DATA * ch, char *argument )
    value = is_number( arg3 ) ? atoi( arg3 ) : -1;
    if( atoi( arg3 ) < -1 && value == -1 )
       value = atoi( arg3 );
-      
-   if( !str_cmp( arg2, "skinning" ) )
-      
-   {
-      if( value < minskin || value > maxskin )
-         
-      {
-         progbug( "MpMset: Invalid skinning", ch );
-         return;
-      }
-      victim->skinamount = value;
-      return;
-   }
    if( !str_cmp( arg2, "str" ) )
       
    {

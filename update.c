@@ -1035,8 +1035,6 @@ void mobile_update( void )
                      do_eat( ch, keyword );
                   noDrop = TRUE;
                   break;
-               case ITEM_CARVINGKNIFE:
-                  break;
                default:
                   if( number_percent(  ) < 75 && !xIS_SET( ch->act, ACT_SCAVENGER ) )
                      do_drop( ch, keyword );

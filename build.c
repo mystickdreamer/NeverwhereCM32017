@@ -104,8 +104,8 @@ char *const bp_flags[] = {
    "rpaw", "lpaw", "rwing", "lwing", "rear",
    "lear", "horn", "rhorn", "lhorn", "tongue", "fangs",
    "tentacles", "beak", "rfleg", "lfleg", "rrleg",
-   "lrleg", "waist", "face", "rfin", "lfin", "dfin",
-   "groin", "claws"
+   "lrleg", "ass", "face", "rfin", "lfin", "dfin",
+   "penis", "vagina", "claws"
 };
 
 char *const o_flags[] = {
@@ -153,7 +153,7 @@ char *const o_types[] = {
    "runepouch", "sheath", "trap", "map", "portal", "paper", "tinder",
    "lockpick", "lock", "disease", "oil", "fuel", "vehicle", "bank",
    "missileweapon", "projectile", "quiver", "shovel", "salve", "cook",
-   "keyring", "carvingknife", "odor"
+   "keyring", "odor"
 };
 
 char *const a_types[] = {
@@ -933,7 +933,7 @@ void do_mset( CHAR_DATA * ch, char *argument )
    char char1, char2;
    CHAR_DATA *victim;
    int value;
-   int minattr, maxattr, minskin, maxskin;
+   int minattr, maxattr;
    bool lockvictim;
    char *origarg = argument;
 
@@ -1062,13 +1062,6 @@ void do_mset( CHAR_DATA * ch, char *argument )
       send_to_char( "  name short long description title spec\n\r", ch );
       send_to_char( "  age qp qpa favor deity\n\r", ch );
       send_to_char( "\n\r", ch );
-      send_to_char( "skinamount - set amount 0 to 4\n\r", ch);
-      send_to_char( " &GHideype: \n\r", ch);
-      send_to_char( "     &G1)Scraps,    2)Scrawny Pelt, 3)Scrawny Fur, 4)Scrawny Hide, 5)Rough Pelt, 6)Rough Fur\r\n", ch );
-      send_to_char( "     &G7)Rough Hide, 8)Thin Pelt, 9)Thin Fur, 10)Thin Hide, 11)Pelt, 12)Fur, 13)Hide, 14)Tough Pelt\r\n", ch );
-      send_to_char( "    &G15)Tough Fur, 16)Tough Hide, 17)Fine Pelt, 18)Fine Fur, 19)Fine Hide, 20)Fancy Pelt\r\n", ch );
-      send_to_char( "    &G21)Fancy Fur, 22)Fancy Hide\r\n&w\n\r", ch);
-      send_to_char( "\n\r", ch );
       send_to_char( "For editing index/prototype mobiles:\n\r", ch );
       send_to_char( "  hitnumdie hitsizedie hitplus (hit points)\n\r", ch );
       send_to_char( "  damnumdie damsizedie damplus (damage roll)\n\r", ch );
@@ -1087,9 +1080,7 @@ void do_mset( CHAR_DATA * ch, char *argument )
 
    minattr = 1;
    maxattr = 1000;
-   minskin = 0;
-   maxskin = 4;
-   
+
    if( !str_cmp( arg2, "on" ) )
    {
       CHECK_SUBRESTRICTED( ch );
@@ -1112,33 +1103,7 @@ void do_mset( CHAR_DATA * ch, char *argument )
 
    if( atoi( arg3 ) < -1 && value == -1 )
       value = atoi( arg3 );
-   
-    if( !str_cmp( arg2, "skinamount" ) )
-   {
-      if( value < minskin || value > maxskin )
-      {
-          ch_printf( ch, "Skinning Amount range if %d to %d. \n\r", minskin, maxskin );
-          victim->skinamount = 0;
-          return;
-      }
-      victim->skinamount = value;
-      if( IS_NPC( victim ) && xIS_SET( victim->act, ACT_PROTOTYPE ) )
-         victim->pIndexData->skinamount = value;
-      return;
-   }
-       if( !str_cmp( arg2, "hidetype" ) )
-   {
-      if( value < 0 || value > SKIN_MAX )
-      {
-          ch_printf( ch, "Hide type range if %d to %d. \n\r", 0, SKIN_MAX );
-          victim->hide_type = 0;
-          return;
-      }
-      victim->hide_type = value;
-      if( IS_NPC( victim ) && xIS_SET( victim->act, ACT_PROTOTYPE ) )
-         victim->pIndexData->hide_type = value;
-      return;
-   }
+
    if( !str_cmp( arg2, "str" ) )
    {
       if( value < minattr || value > maxattr )
@@ -1472,8 +1437,6 @@ void do_mset( CHAR_DATA * ch, char *argument )
       return;
    }
 
-   
-   
    if( !str_cmp( arg2, "move" ) )
    {
       if( value < 0 || value > 30000 )
@@ -2376,12 +2339,6 @@ void do_oset( CHAR_DATA * ch, char *argument )
       send_to_char( "  name short long ed rmed actiondesc\n\r", ch );
       send_to_char( "  type value0 value1 value2 value3 value4 value5\n\r", ch );
       send_to_char( "  affect rmaffect layers size mana\n\r", ch );
-      send_to_char( "For corpses:             \n\r", ch );
- /*     send_to_char( "   skinamount\n\r", ch);
-      send_to_char( "     &G1)Scraps,    2)Scrawny Pelt, 3)Scrawny Fur, 4)Scrawny Hide, 5)Rough Pelt, 6)Rough Fur\r\n", ch );
-      send_to_char( "     &G7)Rough Hide, 8)Thin Pelt, 9)Thin Fur, 10)Thin Hide, 11)Pelt, 12)Fur, 13)Hide, 14)Tough Pelt\r\n", ch );
-      send_to_char( "    &G15)Tough Fur, 16)Tough Hide, 17)Fine Pelt, 18)Fine Fur, 19)Fine Hide, 20)Fancy Pelt\r\n", ch );
-      send_to_char( "    &G21)Fancy Fur, 22)Fancy Hide\r\n&w", ch);  */ //don't really need this yet I don't think    
       send_to_char( "For weapons:             For armor:\n\r", ch );
       send_to_char( "  weapontype               ac\n\r", ch );
       send_to_char( "For scrolls, potions and pills:\n\r", ch );
@@ -2699,21 +2656,7 @@ void do_oset( CHAR_DATA * ch, char *argument )
       }
       return;
    }
-/*       if( !str_cmp( arg2, "skinamount" ) )
-   {
-      if( value < 0 || value > 4 )
-      {
-          ch_printf( ch, "Skinning Amount range if %d to %d. \n\r", 0, 4 );
-          obj->skinamount = 0;
-          return;
-      }
-      obj->skinamount = value;
-      if( IS_OBJ_STAT( obj, ITEM_PROTOTYPE ) )
-      {
-         obj->pIndexData->skinamount = value;
-      }
-      return;
-   } */
+
    if( !str_cmp( arg2, "cost" ) )
    {
       obj->cost = value;
@@ -3313,11 +3256,6 @@ void do_material( CHAR_DATA * ch, char *argument )
       send_to_char( "Where <field> is one of:\r\n", ch );
       send_to_char( "  name short long weight flags\r\n", ch );
       send_to_char( "  affect sector race rarity\r\n", ch );
-      send_to_char( " &GHideType\r\n", ch);
-      send_to_char( "     &G1)Scraps,    2)Scrawny Pelt, 3)Scrawny Fur, 4)Scrawny Hide, 5)Rough Pelt, 6)Rough Fur\r\n", ch );
-      send_to_char( "     &G7)Rough Hide, 8)Thin Pelt, 9)Thin Fur, 10)Thin Hide, 11)Pelt, 12)Fur, 13)Hide, 14)Tough Pelt\r\n", ch );
-      send_to_char( "    &G15)Tough Fur, 16)Tough Hide, 17)Fine Pelt, 18)Fine Fur, 19)Fine Hide, 20)Fancy Pelt\r\n", ch );
-      send_to_char( "    &G21)Fancy Fur, 22)Fancy Hide\r\n&w", ch);
       send_to_char( "  magic\n\r", ch );
       return;
    }
@@ -3370,9 +3308,7 @@ void do_material( CHAR_DATA * ch, char *argument )
       send_to_char( buf, ch );
       sprintf( buf, "Rarity: %d percent\r\n", material->rarity );
       send_to_char( buf, ch );
-      sprintf( buf, "Sector: %d  Race: %d %s\r\n", material->sector, material->race, npc_race[material->race] );
-      send_to_char( buf, ch );
-      sprintf( buf, "Hidetype: %d\r\n", material->skin );
+      sprintf( buf, "Sector: %d  Race: %d\r\n", material->sector, material->race );
       send_to_char( buf, ch );
       for( paf = material->first_affect; paf; paf = paf->next )
       {
@@ -3481,7 +3417,6 @@ void do_material( CHAR_DATA * ch, char *argument )
       material->magic = 100;
       material->sector = -1;
       material->race = -1;
-      material->skin = -1;
       xCLEAR_BITS( material->extra_flags );
       material->first_affect = NULL;
       sprintf( buf, "Material %d created.\r\n", material->number );
@@ -3688,22 +3623,6 @@ void do_material( CHAR_DATA * ch, char *argument )
          send_to_char( "Sector type set.\r\n", ch );
          return;
       }
-      if( !strcmp( arg3, "hidetype" ) )
-      {
-          if( arg4[0] != '-' && !is_number( arg4 ) )
-          {
-              send_to_char( "That is not a number.\r\n", ch );
-              return;
-          }
-          if( atoi( arg4 ) >= SKIN_MAX || atoi( arg4 ) < -1 )
-          {
-              send_to_char( "That is not a valid skin type. \r\n", ch );
-              return;
-          }
-          material->skin = atoi( arg4 );
-          send_to_char( "Hide type set.\r\n", ch);
-          return;
-      }
       if( !strcmp( arg3, "race" ) )
       {
          if( arg4[0] != '-' && !is_number( arg4 ) )
@@ -3756,7 +3675,6 @@ void do_material( CHAR_DATA * ch, char *argument )
          fprintf( fp, "Rarity	%d\n", material->rarity );
          fprintf( fp, "Sector	%d\n", material->sector );
          fprintf( fp, "Race	%d\n", material->race );
-         fprintf( fp, "Skin    %d\n", material->skin );
          fprintf( fp, "Extra	%s\n", print_bitvector( &material->extra_flags ) );
 /* save affects */
          for( paf = material->first_affect; paf; paf = paf->next )
@@ -3838,7 +3756,7 @@ void do_ingredient( CHAR_DATA * ch, char *argument )
    {
       if( !first_ingred )
       {
-         send_to_char( "No alchemical ingredients have been defined.\r\n", ch );
+         send_to_char( "No alchemical ingredientss have been defined.\r\n", ch );
          return;
       }
       ingred = first_ingred;
@@ -3848,7 +3766,7 @@ void do_ingredient( CHAR_DATA * ch, char *argument )
          while( ingred )
          {
             sprintf( buf, "%d: %s\r\n",
-                     ingred->vnum,( pObjIndex = get_obj_index( ingred->vnum ) ) ? pObjIndex->short_descr : "???" );
+                     ingred->vnum, ( pObjIndex = get_obj_index( ingred->vnum ) ) ? pObjIndex->short_descr : "???" );
             send_to_char( buf, ch );
             ingred = ingred->next;
          }

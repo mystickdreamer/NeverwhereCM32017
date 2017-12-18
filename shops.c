@@ -880,7 +880,6 @@ void do_shopset( CHAR_DATA * ch, char *argument )
    }
 
    /* This doesn't work right now for some reason */ 
-   /*This apparently does work */
    if( !str_cmp( arg1, "room" ) )
    {
       if( ( room2 = get_room_index( value ) ) == NULL )
@@ -901,22 +900,6 @@ void do_shopset( CHAR_DATA * ch, char *argument )
       ch_printf( ch, "Shop %d is now Shop %d.\n\r", room->vnum, shop->room );
       fold_area( room->area, room->area->filename, FALSE );
       fold_area( room2->area, room2->area->filename, FALSE );
-      return;
-   }
-   
-   /* Changing the gold for the shop */
-   
-      if( !str_cmp( arg1, "gold" ) )
-   {
-      if( value < 1 )
-      {
-         send_to_char( "You have to give them some money.\n\r", ch );
-         return;
-      }
-	else
-      
-      shop->gold = value;
-      ch_printf( ch, "Shop gold is now %d.\n\r", shop->gold );
       return;
    }
 

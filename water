@@ -1,0 +1,1239 @@
+act_comm.c:83:   if( IS_SET( room->room_flags, ROOM_SILENCE ) )
+act_comm.c:419:   if( IS_SET( ch->in_room->room_flags, ROOM_LOGSPEECH ) )
+act_comm.c:427:   if( ch->in_room && IS_SET( ch->in_room->room_flags, ROOM_AMPLIFY ) )
+act_comm.c:436:      for( pexit = was_in_room->first_exit; pexit; pexit = pexit->next )
+act_comm.c:557:   if( IS_SET( ch->in_room->room_flags, ROOM_LOGSPEECH ) )
+act_comm.c:609:      ch_printf( victim, "&W^z%s beeps you from '%s'^x&w\a\n\r", ch->name, ch->in_room->name );
+act_comm.c:658:   if( ( !IS_AWAKE( victim ) ) || ( !IS_NPC( victim ) && IS_SET( victim->in_room->room_flags, ROOM_SILENCE ) ) )
+act_comm.c:681:   if( IS_SET( ch->in_room->room_flags, ROOM_LOGSPEECH ) )
+act_comm.c:781:   for( vch = ch->in_room->first_person; vch; vch = vch->next_in_room )
+act_comm.c:789:   if( IS_SET( ch->in_room->room_flags, ROOM_LOGSPEECH ) )
+act_comm.c:941:   if( IS_SET( ch->in_room->room_flags, ROOM_NO_QUIT ) && IS_SET( ch->pcdata->permissions, PERMIT_BUILD ) )
+act_comm.c:962:   if( IS_SET( ch->in_room->area->flags, AFLAG_NOQUIT ) && !ch->pcdata->permissions )
+act_comm.c:995:   sprintf( log_buf, "%s has quit in %s (%d).", ch->name, ch->in_room->name, ch->in_room->vnum );
+act_comm.c:1482:      for( rch = ch->in_room->first_person; rch; rch = rch->next_in_room )
+act_comm.c:1589:   for( gch = ch->in_room->first_person; gch; gch = gch->next_in_room )
+act_comm.c:1622:   for( gch = ch->in_room->first_person; gch; gch = gch->next_in_room )
+act_comm.c:1687:   for( trail = ch->in_room->first_trail; trail; trail = trail->next )
+act_info.c:675:         else if( ( victim->in_room->sector_type == SECT_UNDERWATER )
+act_info.c:680:         else if( ( victim->in_room->sector_type == SECT_OCEANFLOOR )
+act_info.c:942:      show_char_to_char( ch->in_room->first_person, ch );
+act_info.c:961:         ch_printf( ch, "[%d] ", ch->in_room->vnum );
+act_info.c:977:      else if( IS_SET( ch->in_room->room_flags, ROOM_NOFLOOR ) )
+act_info.c:1011:         send_to_char( ch->in_room->name, ch );
+act_info.c:1021:         if( ch->in_room->sector_type == SECT_LAVA )
+act_info.c:1023:         else if( ch->in_room->sector_type == SECT_DUNNO )
+act_info.c:1035:         switch ( ch->in_room->sector_type )
+act_info.c:1065:         switch ( ch->in_room->sector_type )
+act_info.c:1104:      if( !ch->in_room->pShop )
+act_info.c:1105:         show_list_to_char( ch->in_room->first_content, ch, FALSE, FALSE );
+act_info.c:1108:      show_char_to_char( ch->in_room->first_person, ch );
+act_info.c:1193:            for( pexit = ch->in_room->first_exit; pexit; pexit = pexit->next )
+act_info.c:1243:   if( ( pdesc = get_extra_descr( arg1, ch->in_room->first_extradesc ) ) != NULL )
+act_info.c:1386:   for( obj = ch->in_room->last_content; obj; obj = obj->prev_content )
+act_info.c:1767:   for( pexit = ch->in_room->first_exit; pexit; pexit = pexit->next )
+act_info.c:1777:               sprintf( buf + strlen( buf ), "[%d]-", pexit->to_room->vnum );
+act_info.c:1789:                        pexit->to_room->vnum,
+act_info.c:1791:                        ? "&O#&w" : "&w", capitalize( dir_name[pexit->vdir] ), pexit->to_room->name );
+act_info.c:1795:                        ? "&O#&w" : "&w", capitalize( dir_name[pexit->vdir] ), pexit->to_room->name );
+act_info.c:1884:   AREA_DATA *tarea = ch->in_room->area;
+act_info.c:1893:      temp = ( ch->in_room->area->weather->temp + 3 * weath_unit - 1 ) / weath_unit;
+act_info.c:1894:      precip = ( ch->in_room->area->weather->precip + 3 * weath_unit - 1 ) / weath_unit;
+act_info.c:1895:      wind = ( ch->in_room->area->weather->wind + 3 * weath_unit - 1 ) / weath_unit;
+act_info.c:1896:      mana = ( ch->in_room->area->weather->mana + 3 * weath_unit - 1 ) / weath_unit;
+act_info.c:1934:            if( ( moon->up ) && ( !str_cmp( moon->world, ch->in_room->area->resetmsg ) ) )
+act_info.c:2065:   temp = ( ch->in_room->area->weather->temp + 3 * weath_unit - 1 ) / weath_unit;
+act_info.c:2066:   precip = ( ch->in_room->area->weather->precip + 3 * weath_unit - 1 ) / weath_unit;
+act_info.c:2067:   wind = ( ch->in_room->area->weather->wind + 3 * weath_unit - 1 ) / weath_unit;
+act_info.c:2068:   mana = ( ch->in_room->area->weather->mana + 3 * weath_unit - 1 ) / weath_unit;
+act_info.c:2102:         if( ( moon->up ) && ( !str_cmp( moon->world, ch->in_room->area->resetmsg ) ) )
+act_info.c:2383:      ch_printf( ch, "You are in %s.", ch->in_room->name );
+act_info.c:2395:          && ( victim->in_room->area == ch->in_room->area
+act_info.c:2397:          && ( !str_cmp( victim->in_room->area->resetmsg,
+act_info.c:2398:                         ch->in_room->area->resetmsg )
+act_info.c:2400:          && ( !IS_SET( victim->in_room->room_flags, ROOM_NO_ASTRAL )
+act_info.c:2405:         pager_printf_color( ch, "%-20s  ", victim->in_room->name );
+act_info.c:2406:         pager_printf_color( ch, "%-15s  ", victim->in_room->area->name );
+act_info.c:2407:         pager_printf_color( ch, "%-10s\n\r", victim->in_room->area->resetmsg );
+act_info.c:2555:      for( mob = ch->in_room->first_person; mob; mob = mob->next_in_room )
+act_move.c:239:   int sector = room->sector_type;
+act_move.c:242:   if( room->name )
+act_move.c:243:      STRFREE( room->name );
+act_move.c:244:   if( room->description )
+act_move.c:245:      STRFREE( room->description );
+act_move.c:247:   room->name = STRALLOC( "In a virtual room" );
+act_move.c:248:   room->description = STRALLOC( "You're on a pathway.\n\r" );
+act_move.c:253:   room->name = STRALLOC( sect_names[sector][0] );
+act_move.c:361:   room->description = STRALLOC( buf2 );
+act_move.c:377:         vroom_hash[hash] = room->next;
+act_move.c:385:         room_next = room->next;
+act_move.c:386:         if( !room->first_person && !room->first_content )
+act_move.c:445:   for( xit = room->first_exit; xit; xit = xit->next )
+act_move.c:464:   for( xit = room->first_exit; xit; xit = xit->next )
+act_move.c:484:   for( cnt = 0, xit = room->first_exit; xit; xit = xit->next )
+act_move.c:497:   if( ch->in_room->vnum - ch->in_room->area->low_r_vnum > 125 )
+act_move.c:503:      if( xarea->index == ch->in_room->area->low_soft_range )
+act_move.c:505:         if( xIS_SET( xarea->rooms, ch->in_room->vnum - ch->in_room->area->low_r_vnum ) )
+act_move.c:507:         xSET_BIT( xarea->rooms, ch->in_room->vnum - ch->in_room->area->low_r_vnum );
+act_move.c:515:   xarea->index = ch->in_room->area->low_soft_range;
+act_move.c:519:   xSET_BIT( xarea->rooms, ch->in_room->vnum - ch->in_room->area->low_r_vnum );
+act_move.c:576:   if( IS_SET( ch->in_room->room_flags, ROOM_NOFLOOR ) && CAN_GO( ch, DIR_DOWN ) )
+act_move.c:616:               bug( "Falling (in a loop?) more than 80 rooms: vnum %d", ch->in_room->vnum );
+act_move.c:655:   int virtual = in_room->virtual;
+act_move.c:664:      serial = in_room->vnum;
+act_move.c:665:      roomnum = in_room->tele_vnum;
+act_move.c:682:      int r1 = in_room->vnum;
+act_move.c:698:   for( room = vroom_hash[hash]; room; room = room->next )
+act_move.c:699:      if( room->vnum == serial && room->tele_vnum == roomnum )
+act_move.c:707:      room->area = in_room->area;
+act_move.c:708:      room->vnum = serial;
+act_move.c:709:      room->virtual = virtual;
+act_move.c:710:      room->tele_vnum = roomnum;
+act_move.c:711:      room->sector_type = in_room->sector_type;
+act_move.c:712:      room->room_flags = in_room->room_flags;
+act_move.c:714:      room->next = vroom_hash[hash];
+act_move.c:804:          && ch->in_room->sector_type != SECT_WATER_SWIM
+act_move.c:805:          && ch->in_room->sector_type != SECT_WATER_NOSWIM
+act_move.c:806:          && ch->in_room->sector_type != SECT_UNDERWATER && ch->in_room->sector_type != SECT_OCEANFLOOR )
+act_move.c:867:       && ( IS_SET( pexit->to_room->room_flags, ROOM_NO_MOB ) || IS_SET( pexit->to_room->runes, RUNE_DISTRACT ) ) )
+act_move.c:873:   if( IS_SET( pexit->to_room->room_flags, ROOM_NO_DREAM )
+act_move.c:922:         if( to_room->sector_type == SECT_INSIDE )
+act_move.c:927:         if( !IS_SET( ch->in_obj->value[2], VEHICLE_SPACE ) && to_room->sector_type == SECT_DUNNO )
+act_move.c:932:         if( ( to_room->sector_type == SECT_UNDERWATER
+act_move.c:933:               || to_room->sector_type == SECT_OCEANFLOOR ) && !IS_SET( ch->in_obj->value[2], VEHICLE_UNDERWATER ) )
+act_move.c:940:            if( to_room->sector_type == SECT_SWAMP )
+act_move.c:945:            if( ( to_room->sector_type == SECT_MOUNTAIN
+act_move.c:946:                  || to_room->sector_type == SECT_HILLS
+act_move.c:947:                  || to_room->sector_type == SECT_FOREST ) && !IS_SET( ch->in_obj->value[2], VEHICLE_CLIMB ) )
+act_move.c:952:            else if( ( to_room->sector_type == SECT_DESERT
+act_move.c:953:                       || to_room->sector_type == SECT_BEACH ) && !IS_SET( ch->in_obj->value[2], VEHICLE_SAND ) )
+act_move.c:958:            else if( ( to_room->sector_type == SECT_WATER_SWIM
+act_move.c:959:                       || to_room->sector_type == SECT_WATER_NOSWIM ) && !IS_SET( ch->in_obj->value[2], VEHICLE_SURFACE ) )
+act_move.c:964:            else if( ( to_room->sector_type == SECT_ICE
+act_move.c:965:                       || IS_SET( to_room->room_flags, ROOM_SLIPPERY ) ) && !IS_SET( ch->in_obj->value[2], VEHICLE_ICE ) )
+act_move.c:970:            else if( ( to_room->sector_type == SECT_CITY
+act_move.c:971:                       || to_room->sector_type == SECT_FIELD ) && !IS_SET( ch->in_obj->value[2], VEHICLE_LAND ) )
+act_move.c:977:         if( to_room->sector_type == SECT_UNDERGROUND && !IS_SET( ch->in_obj->value[2], VEHICLE_UNDERGROUND ) )
+act_move.c:984:      if( ( in_room->sector_type == SECT_AIR
+act_move.c:985:            || to_room->sector_type == SECT_AIR || IS_SET( pexit->exit_info, EX_FLY ) ) && pexit->vdir == 4 )
+act_move.c:1112:            move = movement_loss[UMIN( SECT_MAX - 1, in_room->sector_type )];
+act_move.c:1125:            move = encumbrance( ch, movement_loss[UMIN( SECT_MAX - 1, in_room->sector_type )] );
+act_move.c:1164:   if( !ch->in_obj && ( ch->in_room->sector_type == SECT_UNDERWATER || ch->in_room->sector_type == SECT_OCEANFLOOR ) )
+act_move.c:1227:   if( IS_SET( ch->in_room->room_flags, ROOM_SLIPPERY ) && !IS_AFFECTED( ch, AFF_FLYING ) && !fall && !ch->in_obj )
+act_move.c:1254:   if( IS_SET( ch->in_room->room_flags, ROOM_STICKY ) && !IS_AFFECTED( ch, AFF_FLYING ) && !fall )
+act_move.c:1267:   for( gch = ch->in_room->first_person; gch; gch = gch->next_in_room )
+act_move.c:1377:   trail = ch->in_room->first_trail;
+act_move.c:1388:         UNLINK( trail, ch->in_room->first_trail, ch->in_room->last_trail, next, prev );
+act_move.c:1441:      for( rch = ch->in_room->first_person; rch; rch = rch->next_in_room )
+act_move.c:1461:      for( rch = ch->in_room->first_person; rch; rch = rch->next )
+act_move.c:1539:   trail = ch->in_room->first_trail;
+act_move.c:1554:      LINK( new_trail, ch->in_room->first_trail, ch->in_room->last_trail, next, prev );
+act_move.c:1592:      for( fch = from_room->first_person; fch; fch = fch->next_in_room )
+act_move.c:1595:      for( fch = from_room->first_person; fch && ( count < chars ); fch = nextinroom )
+act_move.c:1612:   if( ch->in_room->first_content )
+act_move.c:1777:      for( pexit = ch->in_room->first_exit; pexit; pexit = pexit->next )
+act_move.c:1897:            for( rch = pexit->to_room->first_person; rch; rch = rch->next_in_room )
+act_move.c:1990:         for( rch = pexit->to_room->first_person; rch; rch = rch->next_in_room )
+act_move.c:2341:            fold_area( ch->in_room->area, ch->in_room->area->filename, FALSE );
+act_move.c:2376:            for( rch = to_room->first_person; rch; rch = rch->next_in_room )
+act_move.c:2415:            for( rch = to_room->first_person; rch; rch = rch->next_in_room )
+act_move.c:2442:         for( rch = to_room->first_person; rch; rch = rch->next_in_room )
+act_move.c:2449:      for( gch = ch->in_room->first_person; gch; gch = gch->next_in_room )
+act_move.c:2522:      obj = get_obj_list( ch, arg, ch->in_room->first_content );
+act_move.c:2567:         if( IS_SET( ch->in_room->room_flags, ROOM_STICKY ) )
+act_move.c:2588:         if( IS_SET( ch->in_room->room_flags, ROOM_STICKY ) )
+act_move.c:2608:         if( IS_SET( ch->in_room->room_flags, ROOM_STICKY ) )
+act_move.c:2628:         if( IS_SET( ch->in_room->room_flags, ROOM_STICKY ) )
+act_move.c:2745:            obj = get_obj_list( ch, arg, ch->in_room->first_content );
+act_move.c:2958:            obj = get_obj_list( ch, arg, ch->in_room->first_content );
+act_move.c:3129:            obj = get_obj_list( ch, arg, ch->in_room->first_content );
+act_move.c:3262:   if( IS_SET( ch->in_room->room_flags, ROOM_STICKY ) )
+act_move.c:3287:      for( pexit = ch->in_room->first_exit; pexit; pexit = pexit->next )
+act_move.c:3318:      for( pexit = ch->in_room->first_exit; pexit; pexit = pexit->next )
+act_move.c:3324:      if( ch->in_room->sector_type != SECT_INSIDE && IS_OUTSIDE( ch ) )
+act_move.c:3325:         for( pexit = ch->in_room->first_exit; pexit; pexit = pexit->next )
+act_move.c:3326:            if( pexit->to_room && ( pexit->to_room->sector_type == SECT_INSIDE
+act_move.c:3327:                                    || IS_SET( pexit->to_room->room_flags, ROOM_INDOORS ) ) )
+act_move.c:3339:   obj = get_obj_list( ch, argument, ch->in_room->first_content );
+act_move.c:3395:      for( pexit = ch->in_room->first_exit; pexit; pexit = pexit->next )
+act_move.c:3401:      if( ch->in_room->sector_type == SECT_INSIDE || !IS_OUTSIDE( ch ) )
+act_move.c:3402:         for( pexit = ch->in_room->first_exit; pexit; pexit = pexit->next )
+act_move.c:3403:            if( pexit->to_room && pexit->to_room->sector_type != SECT_INSIDE
+act_move.c:3404:                && !IS_SET( pexit->to_room->room_flags, ROOM_INDOORS ) )
+act_move.c:3465:   for( xtmp = room->first_exit; xtmp; xtmp = xtmp->next )
+act_move.c:3485:      for( xit = room->first_exit; xit; xit = xit->next )
+act_move.c:3516:         switch ( room->sector_type )
+act_move.c:3758:/*	if ( destrm && xit->to_room->first_person )
+act_move.c:3760:	    act(AT_PLAIN, destrm, xit->to_room->first_person, NULL, dtxt, TO_CHAR );
+act_move.c:3761:	    act(AT_PLAIN, destrm, xit->to_room->first_person, NULL, dtxt, TO_ROOM );
+act_move.c:3794:      for( obj = room->first_content; obj; obj = obj_next )
+act_move.c:3832:            if( objmsg && room->first_person )
+act_move.c:3834:               act( AT_PLAIN, objmsg, room->first_person, obj, dir_name[xit->vdir], TO_CHAR );
+act_move.c:3835:               act( AT_PLAIN, objmsg, room->first_person, obj, dir_name[xit->vdir], TO_ROOM );
+act_move.c:3837:            if( destob && xit->to_room->first_person )
+act_move.c:3839:               act( AT_PLAIN, destob, xit->to_room->first_person, obj, dtxt, TO_CHAR );
+act_move.c:3840:               act( AT_PLAIN, destob, xit->to_room->first_person, obj, dtxt, TO_ROOM );
+act_move.c:3881:         sprintf( arg, "%d: %s\r\n", slot, ( room ? room->name : "None" ) );
+act_move.c:3912:         ch->pcdata->memorize[ch->recall] = ch->in_room->vnum;
+act_move.c:3971:   if( IS_SET( victim->in_room->room_flags, ROOM_SAFE ) && get_timer( victim, TIMER_SHOVEDRAG ) <= 0 )
+act_move.c:4007:   if( IS_SET( ch->in_room->room_flags, ROOM_SAFE ) && get_timer( ch, TIMER_SHOVEDRAG ) <= 0 )
+act_move.c:4059:      if( ch->in_room->pShop )
+act_move.c:4105:      for( victim = ch->was_in_room->first_person; victim; victim = victim->next_in_room )
+act_move.c:4144:   if( IS_SET( victim->in_room->room_flags, ROOM_SAFE )
+act_obj.c:111:      for( rch = ch->in_room->first_person; rch; rch = rch->next_in_room )
+act_obj.c:252:            if( ch->in_room->pShop )
+act_obj.c:261:            obj = get_obj_list( ch, arg1, ch->in_room->first_content );
+act_obj.c:304:                &&IS_SET( ch->in_room->room_flags, ROOM_STICKY )  &&( !IS_OBJ_STAT( obj, ITEM_HOVER ) ) )
+act_obj.c:335:         if( IS_SET( ch->in_room->room_flags, ROOM_DONATION ) )
+act_obj.c:360:            if( ch->in_room->pShop )
+act_obj.c:366:         for( obj = ch->in_room->last_content; obj; obj = obj_next )
+act_obj.c:972:   if( ch->in_room->pShop )
+act_obj.c:1008:   if( IS_SET( ch->in_room->room_flags, ROOM_NODROP )  &&ch != supermob )
+act_obj.c:1047:         for( obj = ch->in_room->first_content; obj; obj = obj_next )
+act_obj.c:1137:         if( IS_SET( ch->in_room->room_flags, ROOM_NODROPALL ) )
+act_obj.c:1408:   if( obj->in_room && ( ch = obj->in_room->first_person ) != NULL )
+act_obj.c:1518:   obj = get_obj_list_rev( ch, arg, ch->in_room->last_content );
+act_obj.c:1526:   switch ( ch->in_room->sector_type )
+act_obj.c:1598:      for( vch = ch->in_room->first_person; vch; vch = vch_next )
+act_obj.c:1669:   if( IS_SET( obj->in_room->room_flags, ROOM_NOFLOOR )  &&CAN_GO( obj, DIR_DOWN )  &&!IS_OBJ_STAT( obj, ITEM_HOVER ) )
+act_obj.c:1682:         sprintf( buf, "Object falling into same room, room %d", to_room->vnum );
+act_obj.c:1687:      if( obj->in_room->first_person )
+act_obj.c:1690:         act( AT_PLAIN, "$p falls far below.", obj->in_room->first_person, obj, NULL, TO_ROOM );
+act_obj.c:1691:         act( AT_PLAIN, "$p falls far below.", obj->in_room->first_person, obj, NULL, TO_CHAR );
+act_obj.c:1697:      if( obj->in_room->first_person )
+act_obj.c:1700:         act( AT_PLAIN, "$p falls from above.", obj->in_room->first_person, obj, NULL, TO_ROOM );
+act_obj.c:1701:         act( AT_PLAIN, "$p falls from above.", obj->in_room->first_person, obj, NULL, TO_CHAR );
+act_obj.c:1703:      if( !IS_SET( obj->in_room->room_flags, ROOM_NOFLOOR ) && through )
+act_obj.c:1711:            if( obj->in_room->first_person && number_percent(  ) > 15 )
+act_obj.c:1717:            for( rch = obj->in_room->first_person; rch; rch = rch->next_in_room, chcnt++ )
+act_obj.c:1736:                  if( obj->in_room->first_person )
+act_obj.c:1739:                     act( AT_PLAIN, "$p is destroyed by the fall!", obj->in_room->first_person, obj, NULL, TO_ROOM );
+act_obj.c:1740:                     act( AT_PLAIN, "$p is destroyed by the fall!", obj->in_room->first_person, obj, NULL, TO_CHAR );
+act_obj.c:1752:                  if( obj->in_room->first_person )
+act_obj.c:1755:                     act( AT_PLAIN, "$p is destroyed by the fall!", obj->in_room->first_person, obj, NULL, TO_ROOM );
+act_obj.c:1756:                     act( AT_PLAIN, "$p is destroyed by the fall!", obj->in_room->first_person, obj, NULL, TO_CHAR );
+act_wiz.c:664:   for( vic = room->first_person; vic; vic = vic->next_in_room )
+act_wiz.c:778:   victim->retran = victim->in_room->vnum;
+act_wiz.c:1019:                          pexit->to_room ? pexit->to_room->vnum : 0,
+act_wiz.c:1173:                 pexit->to_room ? pexit->to_room->vnum : 0,
+act_wiz.c:1248:   ch_printf_color( ch, "&cIn room: &w%d  ", obj->in_room == NULL ? 0 : obj->in_room->vnum );
+act_wiz.c:1350:                       victim->in_room == NULL ? 0 : victim->in_room->vnum,
+act_wiz.c:1603:                       victim->pIndexData->vnum, victim->short_descr, victim->in_room->vnum, victim->in_room->name );
+act_wiz.c:1626:                             get_char_worth( victim ), victim->name, victim->in_room->vnum, victim->in_room->area->name,
+act_wiz.c:1627:                             victim->in_room->name );
+act_wiz.c:1677:                             obj->in_room->area->name,
+act_wiz.c:1678:                             obj->in_room->vnum,
+act_wiz.c:1753:                obj->in_room->vnum, obj->in_room->name);
+act_wiz.c:1787:                  obj->in_room->vnum, obj->in_room->name);
+act_wiz.c:1838:         sprintf( buf + strlen( buf ), "room   [%5d] %s\n\r", obj->in_room->vnum, obj->in_room->name );
+act_wiz.c:2282:      for( victim = ch->in_room->first_person; victim; victim = vnext )
+act_wiz.c:2289:      for( obj = ch->in_room->first_content; obj; obj = obj_next )
+act_wiz.c:2380:      if( ch->in_room->pShop )
+act_wiz.c:2428:      if( ch->in_room->pShop )
+act_wiz.c:3109:   for( rch = ch->in_room->first_person; rch; rch = rch->next_in_room )
+act_wiz.c:3615:      old_room_vnum = d->character->in_room->vnum;
+act_wiz.c:3953:                     pArea->hi_m_vnum ) == ech->pIndexData->vnum || ( ech->in_room && ech->in_room->area == pArea ) )
+act_wiz.c:3957:      if( ech->in_room && ech->in_room->area == pArea )
+act_wiz.c:3967:                  pArea->hi_o_vnum ) == eobj->pIndexData->vnum || ( eobj->in_room && eobj->in_room->area == pArea ) )
+act_wiz.c:3979:            if( rid->area == pArea || exit->to_room->area == pArea )
+act_wiz.c:4330:   for( rch = ch->in_room->first_person; rch && ( rch != ch ); rch = rch->next_in_room )
+act_wiz.c:4447:         for( room = room_index_hash[i]; room; room = room->next )
+act_wiz.c:4456:            else if( !room->first_person )   /* Skip it if room is empty */
+act_wiz.c:4471:            for( p = room->first_person; p && !found; p = p->next_in_room )
+act_wiz.c:4779:   if( victim->in_room->vnum != ROOM_VNUM_HELL )
+act_wiz.c:4849:                       ( ( in_obj->in_room ) ? in_obj->in_room->vnum : 0 ),
+act_wiz.c:4850:                       obj_short( obj ), ( in_obj->in_room == NULL ) ? "somewhere" : in_obj->in_room->name );
+arena.c:89:   if( !room->first_person )
+arena.c:91:   for( ch = room->first_person; ch; ch = ch->next_in_room )
+arena.c:100:   if( !room->first_person )
+arena.c:157:   if( !room->first_person )
+arena.c:187:   if( !room->first_person )
+arena.c:213:   if( !room->first_person )
+arena.c:239:   if( !room->first_person )
+arena.c:259:   if( !room->first_person )
+arena.c:295:   if( !room->first_person )
+arena.c:361:   if( !room->first_person )
+arena.c:1032:            ch_printf( ch, "Located in %s.\n\r", arena->room->name );
+arena.c:1035:            ch_printf( ch, "Located in %s &Y[&R%d&Y]&R.\n\r", arena->room->name, arena->room->vnum );
+arena.c:1921:         arena->vnum = ch->in_room->vnum;
+birth.c:616:            ch->name, aoran( ch->nation->name ), ch->in_room->name, ch->in_room->vnum );
+birth.c:706:            ch->name, aoran( ch->nation->name ), ch->in_room->name, ch->in_room->vnum );
+birth.c:755:   for( wizard = ch->in_room->first_person; wizard; wizard = wizard->next_in_room )
+birth.c:1030:                        ch->name, aoran( ch->nation->name ), ch->in_room->name, ch->in_room->vnum );
+build.c:885:   ch->regoto = ch->in_room->vnum;
+build.c:900:   for( fch = in_room->first_person; fch; fch = fch_next )
+build.c:5238:      for( room = room_index_hash[hash]; room; room = room->next )
+build.c:5240:         if( nifty_is_name( argument, room->name ) )
+build.c:5242:            ch_printf( ch, "[%d] %s in %s\n\r", room->vnum, room->name, room->area->name );
+build.c:7229:   for( ed = room->first_extradesc; ed; ed = ed->next )
+build.c:7237:      LINK( ed, room->first_extradesc, room->last_extradesc, next, prev );
+build.c:7249:   for( rmed = room->first_extradesc; rmed; rmed = rmed->next )
+build.c:7256:   UNLINK( rmed, room->first_extradesc, room->last_extradesc, next, prev );
+build.c:7626:         REMOVE_BIT( room->room_flags, ROOM_PROTOTYPE );
+build.c:7630:         for( victim = room->first_person; victim; victim = vnext )
+build.c:7639:         for( obj = room->first_content; obj; obj = obj_next )
+build.c:7646:      fprintf( fpout, "%s~\n", room->name );
+build.c:7647:      fprintf( fpout, "%s~\n", strip_cr( room->description ) );
+build.c:7648:      if( ( room->tele_delay > 0 && room->tele_vnum > 0 ) || room->runes > 0 )
+build.c:7649:         fprintf( fpout, "0 %d %d %d %d %d\n", room->room_flags,
+build.c:7650:                  room->sector_type, room->tele_delay, room->tele_vnum, room->runes );
+build.c:7652:         fprintf( fpout, "0 %d %d\n", room->room_flags, room->sector_type );
+build.c:7658:/*	switch( room->sector_type )
+build.c:7663:			room->vegetation = 0;
+build.c:7664:			room->curr_vegetation = 0;
+build.c:7665:			room->water = 0;
+build.c:7666:			room->curr_water = 0;
+build.c:7667:			room->elevation = 100;
+build.c:7668:			room->curr_elevation = 100;
+build.c:7669:			room->resources = 0;
+build.c:7670:			room->curr_resources = 0;
+build.c:7673:			room->vegetation = 0;
+build.c:7674:			room->curr_vegetation = 0;
+build.c:7675:			room->water = 0;
+build.c:7676:			room->curr_water = 0;
+build.c:7677:			room->elevation = 0;
+build.c:7678:			room->curr_elevation = 0;
+build.c:7679:			room->resources = 0;
+build.c:7680:			room->curr_resources = 0;
+build.c:7683:			room->vegetation = 20;
+build.c:7684:			room->curr_vegetation = 20;
+build.c:7685:			room->water = 0;
+build.c:7686:			room->curr_water = 0;
+build.c:7687:			room->elevation = 0;
+build.c:7688:			room->curr_elevation = 0;
+build.c:7689:			room->resources = 70;
+build.c:7690:			room->curr_resources = 70;
+build.c:7693:			room->vegetation = 0;
+build.c:7694:			room->curr_vegetation = 0;
+build.c:7695:			room->water = 20;
+build.c:7696:			room->curr_water = 20;
+build.c:7697:			room->elevation = -100;
+build.c:7698:			room->curr_elevation = -100;
+build.c:7699:			room->resources = 100;
+build.c:7700:			room->curr_resources = 100;
+build.c:7703:			room->vegetation = 90;
+build.c:7704:			room->curr_vegetation = 90;
+build.c:7705:			room->water = 30;
+build.c:7706:			room->curr_water = 30;
+build.c:7707:			room->elevation = 0;
+build.c:7708:			room->curr_elevation = 0;
+build.c:7709:			room->resources = 100;
+build.c:7710:			room->curr_resources = 100;
+build.c:7713:			room->vegetation = 0;
+build.c:7714:			room->curr_vegetation = 0;
+build.c:7715:			room->water = 0;
+build.c:7716:			room->curr_water = 0;
+build.c:7717:			room->elevation = 0;
+build.c:7718:			room->curr_elevation = 0;
+build.c:7719:			room->resources = 30;
+build.c:7720:			room->curr_resources = 30;
+build.c:7723:			room->vegetation = 10;
+build.c:7724:			room->curr_vegetation = 10;
+build.c:7725:			room->water = 0;
+build.c:7726:			room->curr_water = 0;
+build.c:7727:			room->elevation = 0;
+build.c:7728:			room->curr_elevation = 0;
+build.c:7729:			room->resources = 20;
+build.c:7730:			room->curr_resources = 20;
+build.c:7733:			room->vegetation = 30;
+build.c:7734:			room->curr_vegetation = 30;
+build.c:7735:			room->water = 0;
+build.c:7736:			room->curr_water = 0;
+build.c:7737:			room->elevation = 30;
+build.c:7738:			room->curr_elevation = 30;
+build.c:7739:			room->resources = 90;
+build.c:7740:			room->curr_resources = 90;
+build.c:7743:			room->vegetation = 0;
+build.c:7744:			room->curr_vegetation = 0;
+build.c:7745:			room->water = 40;
+build.c:7746:			room->curr_water = 40;
+build.c:7747:			room->elevation = 0;
+build.c:7748:			room->curr_elevation = 0;
+build.c:7749:			room->resources = 100;
+build.c:7750:			room->curr_resources = 100;
+build.c:7753:			room->vegetation = 0;
+build.c:7754:			room->curr_vegetation = 0;
+build.c:7755:			room->water = 80;
+build.c:7756:			room->curr_water = 80;
+build.c:7757:			room->elevation = 0;
+build.c:7758:			room->curr_elevation = 0;
+build.c:7759:			room->resources = 100;
+build.c:7760:			room->curr_resources = 100;
+build.c:7763:			room->vegetation =20;
+build.c:7764:			room->curr_vegetation = 20;
+build.c:7765:			room->water = 0;
+build.c:7766:			room->curr_water = 0;
+build.c:7767:			room->elevation = 70;
+build.c:7768:			room->curr_elevation = 70;
+build.c:7769:			room->resources = 100;
+build.c:7770:			room->curr_resources = 100;
+build.c:7773:			room->vegetation = 0;
+build.c:7774:			room->curr_vegetation = 0;
+build.c:7775:			room->water = 100;
+build.c:7776:			room->curr_water = 100;
+build.c:7777:			room->elevation = 0;
+build.c:7778:			room->curr_elevation = 0;
+build.c:7779:			room->resources = 0;
+build.c:7780:			room->curr_resources = 0;
+build.c:7783:			room->vegetation = 30;
+build.c:7784:			room->curr_vegetation = 30;
+build.c:7785:			room->water = 100;
+build.c:7786:			room->curr_water = 100;
+build.c:7787:			room->elevation = 0;
+build.c:7788:			room->curr_elevation = 0;
+build.c:7789:			room->resources = 100;
+build.c:7790:			room->curr_resources = 100;
+build.c:7795:               room->vegetation, room->curr_vegetation,
+build.c:7796:               room->water, room->curr_water, room->elevation, room->curr_elevation, room->resources, room->curr_resources );
+build.c:7798:      for( xit = room->first_exit; xit; xit = xit->next )
+build.c:7811:      for( pReset = room->first_reset; pReset; pReset = pReset->next )
+build.c:7890:      for( ed = room->first_extradesc; ed; ed = ed->next )
+build.c:7893:      if( room->map )   /* maps */
+build.c:7897:	   fprintf( fpout, "%s~\n", strip_cr( room->map )	);
+build.c:7899:	   fprintf( fpout, "M %d %d %d %c\n",	room->map->vnum,
+build.c:7900:						room->map->x,
+build.c:7901:						room->map->y,
+build.c:7902:						room->map->entry );
+build.c:7905:      if( room->mudprogs )
+build.c:7907:         for( mprog = room->mudprogs; mprog; mprog = mprog->next )
+build.c:7926:      if( ( pShop = room->pShop ) == NULL )
+build.c:8335:            if( tarea == ch->in_room->area )
+build.c:8337:         tarea = ch->in_room->area;
+build.c:8653:      pager_printf( ch, "%5d) %s\n\r", vnum, room->name );
+build.c:9425:   mprog = ch->in_room->mudprogs;
+build.c:9472:            xCLEAR_BITS( ch->in_room->progtypes );
+build.c:9474:               xSET_BIT( ch->in_room->progtypes, mprg->type );
+build.c:9520:         mprg_next = ch->in_room->mudprogs;
+build.c:9521:         ch->in_room->mudprogs = mprg_next->next;
+build.c:9539:            xREMOVE_BIT( ch->in_room->progtypes, mptype );
+build.c:9567:         xSET_BIT( ch->in_room->progtypes, mptype );
+build.c:9570:         ch->in_room->mudprogs = mprg;
+build.c:9579:            xSET_BIT( ch->in_room->progtypes, mptype );
+build.c:9604:         ch->in_room->mudprogs = mprg;
+build.c:9605:      xSET_BIT( ch->in_room->progtypes, mptype );
+build.c:9771:   else if( !ch->in_room->area )
+build.c:9776:   else if( !ch->in_room->area->weather )
+build.c:9784:   area = ch->in_room->area;
+build.c:10051:   tarea = ch->in_room->area;
+build.c:10062:         if( pexit->to_room->area != tarea )
+build.c:10064:            pager_printf( ch, "To: %-20.20s %s\n\r", pexit->to_room->area->filename, pexit->to_room->area->name );
+build.c:10065:            pager_printf( ch, "%15d %-30.30s -> %15d (%s)\n\r", vnum, room->name, pexit->vnum, dir_name[i] );
+build.c:10083:   tarea = ch->in_room->area;
+build.c:10099:            if( pexit->to_room->area == tarea )
+build.c:10102:               pager_printf( ch, "%15d %-30.30s -> %15d (%s)\n\r", vnum, room->name, pexit->vnum, dir_name[i] );
+city.c:481:   if( !ch->in_room->area->city )
+city.c:486:   city = ch->in_room->area->city;
+city.c:489:   if( IS_SET( ch->in_room->room_flags, ROOM_INDOORS ) )
+city.c:495:   if( ch->in_room->curr_vegetation > 50 )
+city.c:503:      ch->in_room->sector_type = SECT_INSIDE;
+city.c:504:      SET_BIT( ch->in_room->room_flags, ROOM_INDOORS );
+city.c:505:      STRFREE( ch->in_room->name );
+city.c:542:      ch->in_room->name = STRALLOC( aoran( buf ) );
+city.c:547:      ch->in_room->sector_type = SECT_INSIDE;
+city.c:548:      SET_BIT( ch->in_room->room_flags, ROOM_INDOORS );
+city.c:549:      STRFREE( ch->in_room->name );
+city.c:586:      ch->in_room->name = STRALLOC( aoran( buf ) );
+city.c:591:      ch->in_room->sector_type = SECT_UNDERGROUND;
+city.c:592:      ch->in_room->resources = 100;
+city.c:593:      SET_BIT( ch->in_room->room_flags, ROOM_INDOORS );
+city.c:594:      STRFREE( ch->in_room->name );
+city.c:631:      ch->in_room->name = STRALLOC( aoran( buf ) );
+city.c:635:      ch->in_room->sector_type = SECT_CITY;
+city.c:636:      STRFREE( ch->in_room->name );
+city.c:673:      ch->in_room->name = STRALLOC( aoran( buf ) );
+city.c:695:   if( !ch->in_room->area->city )
+city.c:700:   city = ch->in_room->area->city;
+city.c:704:      ch->in_room->sector_type = SECT_FOREST;
+city.c:706:      STRFREE( ch->in_room->name );
+city.c:743:      ch->in_room->name = STRALLOC( aoran( buf ) );
+city.c:747:      ch->in_room->sector_type = SECT_FIELD;
+city.c:749:      STRFREE( ch->in_room->name );
+city.c:777:      ch->in_room->name = STRALLOC( aoran( buf ) );
+city.c:785:   ch->in_room->vegetation = 100;
+city.c:786:   ch->in_room->curr_vegetation = 100;
+city.c:796:   if( !ch->in_room->area->city )
+city.c:801:   city = ch->in_room->area->city;
+clan.c:266:      for( atm = ch->in_room->first_content; atm; atm = atm->next_content )
+clan.c:317:      if( !ch->in_room->first_content )
+clan.c:322:      for( atm = ch->in_room->first_content; atm; atm = atm->next_content )
+combat.c:162:               ( IS_SET( ch->in_room->area->flags, AFLAG_FREEKILL ) ?
+combat.c:166:                 ? ch->last_hit->short_descr : ch->last_hit->name ), ch->in_room->name, ch->in_room->vnum );
+combat.c:192:      sprintf( log_buf, "%s (%d) died in %s (%d)", ch->name, get_char_worth( ch ), ch->in_room->name, ch->in_room->vnum );
+combat.c:260:   for( pexit = was_in_room->first_exit; pexit; pexit = pexit->next )
+combat.c:702:   if( IS_SET( ch->in_room->room_flags, ROOM_PRIVATE ) )
+combat.c:744:      if( IS_SET( vch->in_room->room_flags, ROOM_NOMISSILE ) )
+combat.c:839:         for( vch = ch->in_room->first_person; vch; vch = vch->next_in_room )
+comm.c:462:    		ch->name, ch->in_room->vnum );
+comm.c:1972:            if( ch->in_room->vnum == 6 )
+comm.c:1977:         else if( ch->in_room->vnum == ROOM_VNUM_LIMBO )
+comm.c:2015:         sprintf( buf, "%s has entered the game in %s (%d).", ch->name, ch->in_room->name, ch->in_room->vnum );
+comm.c:2738:      to = ch->in_room->first_person;
+comm.c:2777:      for( to_obj = to->in_room->first_content; to_obj; to_obj = to_obj->next_content )
+comm.c:3102:                     sprintf( pbuf, "%s", flag_string( ch->in_room->room_flags, r_flags ) );
+comm.c:3106:                     sprintf( pbuf, "<#%d> ", ch->in_room->vnum );
+comm.c:3889:      sprintf( buf, "PC: %s room: %d", ch->name, ch->in_room ? ch->in_room->vnum : -1 );
+db.c:1519:            boot_log( "%s: %s (%d) bad command '%c'.", __FUNCTION__, room->area->filename, count, letter );
+db.c:1524:            boot_log( "%s: %s (%d) 'M': mobile %d doesn't exist.", __FUNCTION__, room->area->filename, count, arg1 );
+db.c:1529:            boot_log( "%s: %s (%d) '%c': object %d doesn't exist.", __FUNCTION__, room->area->filename, count, letter,
+db.c:1535:            boot_log( "%s: %s (%d) '%c': object %d doesn't exist.", __FUNCTION__, room->area->filename, count, letter,
+db.c:1541:            boot_log( "%s: %s (%d) 'P': destination object %d doesn't exist.", __FUNCTION__, room->area->filename, count,
+db.c:1550:            boot_log( "%s: %s (%d) '%c': object %d doesn't exist.", __FUNCTION__, room->area->filename, count, letter,
+db.c:1565:               boot_log( "%s: %s (%d) 'D': exit %d not door.", __FUNCTION__, room->area->filename, count, arg2 );
+db.c:1572:               boot_log( "%s: %s (%d) 'D': bad 'locks': %d.", __FUNCTION__, room->area->filename, count, arg3 );
+db.c:1581:               boot_log( "%s: %s (%d) 'R': bad exit %d.", __FUNCTION__, room->area->filename, count, arg2 );
+db.c:2054:            if( pexit->to_room->area != tarea && !dupe_neighbor( tarea, pexit->to_room->area ) )
+db.c:2056:               pager_printf( ch, "To: %-20.20s %s\n\r", pexit->to_room->area->filename, pexit->to_room->area->name );
+db.c:2057:               pager_printf( ch, "%15d %-30.30s -> %15d (%s)\n\r", vnum, room->name, pexit->vnum, dir_name[i] );
+db.c:2063:               new->name = STRALLOC( pexit->to_room->area->name );;
+db.c:2229:   for( pexit = room->first_exit; pexit; pexit = pexit->next )
+db.c:2260:   for( pexit = room->first_exit; pexit; pexit = pexit->next )
+db.c:2277:         room->first_exit = exits[x];
+db.c:2282:         room->last_exit = exits[x];
+db.c:2296:   for( pexit = room->first_exit; pexit; pexit = pexit->next )
+db.c:2312:   for( pexit = room->first_exit; pexit; pexit = pexit->next )
+db.c:2353:		&&   pch->in_room->area == pArea
+db.c:3870:      fprintf( fp, "[%5d] %s: %s\n", ch->in_room ? ch->in_room->vnum : 0, ch->name, str );
+db.c:4690:            if( ( original = iRoom->mudprogs ) != NULL )
+db.c:4697:               iRoom->mudprogs = working;
+db.c:4802:   while( ( ch = room->first_person ) != NULL )
+db.c:4812:   while( ( o = room->first_content ) != NULL )
+db.c:4815:   while( ( ed = room->first_extradesc ) != NULL )
+db.c:4817:      room->first_extradesc = ed->next;
+db.c:4823:   while( ( trail = room->first_trail ) != NULL )
+db.c:4825:      room->first_trail = trail->next;
+db.c:4830:   while( ( ex = room->first_exit ) != NULL )
+db.c:4832:   while( ( mpact = room->mpact ) != NULL )
+db.c:4834:      room->mpact = mpact->next;
+db.c:4838:   while( ( mp = room->mudprogs ) != NULL )
+db.c:4840:      room->mudprogs = mp->next;
+db.c:4845:/*  if (room->map)
+db.c:4849:    if ((mapi = get_map_index(room->map->vnum)) != NULL)
+db.c:4850:      if (room->map->x > 0 && room->map->x < 80 &&
+db.c:4851:          room->map->y > 0 && room->map->y < 48)
+db.c:4852:        mapi->map_of_vnums[room->map->y][room->map->x] = -1;
+db.c:4853:    DISPOSE(room->map);
+db.c:4855:   STRFREE( room->name );
+db.c:4856:   STRFREE( room->description );
+db.c:4858:   hash = room->vnum % MAX_KEY_HASH;
+db.c:4860:      room_index_hash[hash] = room->next;
+db.c:4867:         prev->next = room->next;
+db.c:4869:         bug( "delete_room: room %d not in hash bucket %d.", room->vnum, hash );
+db.c:5239:      pexit->vnum = to_room->vnum;
+elkandu.c:327:   if( ch->in_room->pShop )
+elkandu.c:625:      dam = ( dam * 200 ) / ( victim->in_room->curr_vegetation + 10 );
+elkandu.c:628:      dam = ( dam * 200 ) / ( victim->in_room->curr_water + 10 );
+elkandu.c:1651:         if( ch->in_room->curr_vegetation < 100 - ch->curr_talent[TAL_EARTH] )
+elkandu.c:1675:         if( ch->in_room->area->weather->temp > ch->curr_talent[TAL_FROST] * 10 - 400 )
+elkandu.c:2091:         if( ch->in_room->curr_vegetation <= 0 )
+elkandu.c:2096:         ch->in_room->curr_vegetation -= 10;
+elkandu.c:2107:         if( ch->in_room->curr_water <= 0 )
+elkandu.c:2112:         ch->in_room->curr_water -= 10;
+elkandu.c:2123:         if( ch->in_room->curr_vegetation < 10 )
+elkandu.c:2128:         if( ch->in_room->curr_water > 30 )
+elkandu.c:2135:         SET_BIT( ch->in_room->room_flags, ROOM_BURNING );
+elkandu.c:2667:         if( IS_SET( ch->in_room->area->flags, AFLAG_NOBYPASS ) )
+elkandu.c:3179:                  pager_printf( ch, "%s is in %s\n\r", PERS( victim, ch ), victim->in_room->name );
+elkandu.c:3189:                                PERS( victim, ch ), victim->in_room->name, victim->in_room->area->name );
+elkandu.c:3219:                           obj_short( obj ), PERS( in_obj->carried_by, ch ), in_obj->carried_by->in_room->name );
+elkandu.c:3223:                           in_obj->carried_by->in_room->name, in_obj->carried_by->in_room->area->name );
+elkandu.c:3230:                  sprintf( buf, "%s is in %s.\n\r", obj_short( obj ), in_obj->in_room->name );
+elkandu.c:3233:                           obj_short( obj ), in_obj->in_room->name, in_obj->in_room->area->name );
+elkandu.c:3255:                    ch->in_room->name, ch->in_room->area->name, ch->in_room->area->resetmsg );
+elkandu.c:3256:         switch ( ch->in_room->sector_type )
+elkandu.c:3314:         if( ch->in_room->room_flags )
+elkandu.c:3315:            ch_printf( ch, "It seems to be %s.\n\r", flag_string( ch->in_room->room_flags, r_flags ) );
+elkandu.c:3316:         temp = ch->in_room->curr_water;
+elkandu.c:3320:         temp = ch->in_room->curr_vegetation;
+elkandu.c:3322:         temp = ch->in_room->curr_resources;
+elkandu.c:3325:         if( ch->in_room->runes )
+elkandu.c:3327:                       ch->curr_talent[TAL_CATALYSM] < 20 ? "some sort" : flag_string( ch->in_room->runes, rune_flags ) );
+elkandu.c:4025:            sprintf( buf, "%s sent %s to %s (%d).", ch->name, victim->name, target->in_room->name, target->in_room->vnum );
+elkandu.c:4045:         if( IS_SET( ch->in_room->room_flags, ROOM_NO_RECALL ) && ch->curr_talent[TAL_MOTION] < 80 )
+elkandu.c:4087:            if( IS_SET( ch->in_room->area->flags, AFLAG_FREEKILL ) )
+elkandu.c:4094:            location = get_room_index( ch->in_room->area->hi_soft_range );
+elkandu.c:4149:         if( IS_SET( ch->in_room->room_flags, ROOM_NO_RECALL ) && ch->curr_talent[TAL_MOTION] < 80 )
+elkandu.c:4212:            if( IS_SET( ch->in_room->room_flags, ROOM_NO_DREAM )
+elkandu.c:4214:                     || ( IS_SET( ch->in_room->runes, RUNE_WARD ) && ch->curr_talent[TAL_DREAM] < 200 ) ) )
+elkandu.c:4551:         if( IS_SET( ch->in_room->area->flags, AFLAG_NOBYPASS ) )
+elkandu.c:4583:            sprintf( buf, "%s summoned %s to %s (%d).", ch->name, victim->name, ch->in_room->name, ch->in_room->vnum );
+elkandu.c:4678:         if( IS_SET( victim->in_room->room_flags, ROOM_NO_DREAM )
+elkandu.c:4680:                  || ( IS_SET( victim->in_room->runes, RUNE_WARD ) && ch->curr_talent[TAL_DREAM] < 200 ) ) )
+elkandu.c:4728:               if( IS_SET( obj->in_room->room_flags, ROOM_NOSUPPLICATE )
+elkandu.c:4756:            if( IS_SET( ch->in_room->area->flags, AFLAG_FREEKILL ) )
+elkandu.c:4763:            location = get_room_index( ch->in_room->area->hi_soft_range );
+elkandu.c:4818:         if( IS_SET( ch->in_room->room_flags, ROOM_NO_RECALL ) && ch->curr_talent[TAL_MOTION] < 80 )
+elkandu.c:4977:         if( ( ch->curr_talent[TAL_EARTH] < 20 && !IS_NPC( ch ) ) || IS_SET( ch->in_room->room_flags, ROOM_NOFLOOR ) )
+elkandu.c:4985:         for( victim = ch->in_room->first_person; victim; victim = next_vict )
+elkandu.c:4989:            if( IS_AFFECTED( victim, AFF_FLYING ) && !IS_SET( ch->in_room->room_flags, ROOM_INDOORS ) )
+elkandu.c:6119:   if( IS_SET( ch->in_room->room_flags, ROOM_NO_MAGIC ) )
+elkandu.c:6139:         SET_BIT( room->runes, RUNE_LIFE );
+elkandu.c:6150:         SET_BIT( room->runes, RUNE_DISTRACT );
+elkandu.c:6161:         SET_BIT( room->runes, RUNE_WARD );
+elkandu.c:6185:         ch->in_room->runes = 0;
+elkandu.c:7064:         if( ch->in_room->curr_vegetation >= 100 )
+elkandu.c:7069:         ch->in_room->curr_vegetation += 10;
+elkandu.c:7080:         if( ch->in_room->curr_water >= 100 )
+elkandu.c:7085:         ch->in_room->curr_water += 10;
+elkandu.c:7833:            for( victim = ch->in_room->first_person; victim; victim = victim->next_in_room )
+elkandu.c:7854:            for( victim = ch->in_room->first_person; victim; victim = next_vict )
+elkandu.c:7882:            for( victim = ch->in_room->first_person; victim; victim = victim->next_in_room )
+elkandu.c:7903:            for( victim = ch->in_room->first_person; victim; victim = victim->next_in_room )
+fight.c:326:            ||IS_SET( ch->in_room->room_flags, ROOM_BURNING ) 
+fight.c:327:            ||ch->in_room->sector_type == SECT_LAVA 
+fight.c:334:         if( ch->in_room->curr_water > 30  &&ch->in_room->sector_type != SECT_LAVA )
+fight.c:336:            REMOVE_BIT( ch->in_room->room_flags, ROOM_BURNING );
+fight.c:343:            REMOVE_BIT( ch->in_room->room_flags, ROOM_BURNING );
+fight.c:374:      if( ch->in_room->area->weather->temp > 100 )
+fight.c:381:      else if( ch->in_room->area->weather->temp < -100 )
+fight.c:672:            ||IS_SET( pexit->to_room->room_flags, ROOM_NO_MOB ) 
+fight.c:673:            ||( IS_SET( pexit->to_room->room_flags, ROOM_NOFLOOR ) && !IS_FLOATING( ch ) ) )
+grub.c:85:         sprintf( field, "%-18s", outer_obj->in_room->name );
+grub.c:87:         sprintf( buf + strlen( buf ), "%5d %-18s ", outer_obj->in_room->vnum, field );
+grub.c:412:      if( ( pRoom = get_room_index( i ) ) && ( pProg = pRoom->mudprogs ) )
+grub.c:545:            for( pRoom = room_index_hash[cou]; pRoom; pRoom = pRoom->next )
+grub.c:547:               if( pRoom->vnum >= lo && pRoom->vnum <= hi )
+grub.c:549:                  if( match == pRoom->sector_type && hit_cou < RGRUB_ST_MAX_SIZE )
+grub.c:550:                     vnum[hit_cou++] = pRoom->vnum;
+grub.c:1985:            for( pRoom = room_index_hash[cou]; pRoom; pRoom = pRoom->next )
+grub.c:1987:               if( pRoom->vnum >= lo && pRoom->vnum <= hi )
+grub.c:1989:                  if( match == ( match & pRoom->room_flags ) && hit_cou < DIAG_RF_MAX_SIZE )
+grub.c:1990:                     vnum[hit_cou++] = pRoom->vnum;
+handler.c:126:   for( ch = room->first_person; ch; ch = ch->next_in_room )
+handler.c:129:   for( af = room->first_affect; af; af = af->next )
+handler.c:135:   if( !IS_SET( room->room_flags, ROOM_INDOORS ) )
+handler.c:140:         if( moon->up && !str_cmp( moon->world, room->area->resetmsg ) )
+handler.c:146:   for( obj = room->first_content; obj; obj = obj->next_content )
+handler.c:1113:         if( IS_SET( ch->in_room->room_flags, ROOM_NO_MAGIC ) || IS_SET( ch->immune, RIS_MAGIC ) || saving_char == ch   /* so save/quit doesn't trigger */
+handler.c:1397:      for( paf = ch->in_room->first_affect; paf; paf = paf->next )
+handler.c:1490:      --ch->in_room->area->nplayer;
+handler.c:1492:      --ch->in_room->area->nmob;
+handler.c:1506:      for( paf = ch->in_room->first_affect; paf; paf = paf->next )
+handler.c:1513:   UNLINK( ch, ch->in_room->first_person, ch->in_room->last_person, next_in_room, prev_in_room );
+handler.c:1559:      ch->home_room = ch->in_room->vnum;
+handler.c:1602:   if( ch->was_in_room->area != ch->in_room->area )
+handler.c:1604:      reset_area( ch->in_room->area );
+handler.c:1605:      reset_area( ch->in_room->area );
+handler.c:1606:      reset_area( ch->in_room->area );
+handler.c:1856:   UNLINK( obj, in_room->first_content, in_room->last_content, next_content, prev_content );
+handler.c:2010:      for( ch = obj->in_room->first_person; ch; ch = ch->next_in_room )
+handler.c:2314:   for( fch = obj->in_room->first_person; fch != NULL; fch = fch->next_in_room )
+handler.c:2342:   for( rch = ch->in_room->first_person; rch; rch = rch->next_in_room )
+handler.c:2364:   for( rch = ch->in_room->first_person; rch; rch = rch->next_in_room )
+handler.c:2403:   for( wch = ch->in_room->first_person; wch; wch = wch->next_in_room )
+handler.c:2451:   for( wch = ch->in_room->first_person; wch; wch = wch->next_in_room )
+handler.c:2485:   for( rch = ch->in_room->first_person; rch; rch = rch->next_in_room )
+handler.c:2512:   for( rch = obj->in_room->first_person; rch; rch = rch->next_in_room )
+handler.c:2725:   if( ( obj = get_obj_list_rev( ch, argument, ch->in_room->last_content ) ) != NULL )
+handler.c:3743:   if( !ch->in_room || !ch->in_room->first_content )
+handler.c:3746:   for( check = ch->in_room->first_content; check; check = check->next_content )
+handler.c:3812:   UNLINK( pexit, room->first_exit, room->last_exit, next, prev );
+handler.c:3842:   STRFREE( room->description );
+handler.c:3843:   STRFREE( room->name );
+handler.c:3844:   for( ed = room->first_extradesc; ed; ed = ed_next )
+handler.c:3852:   room->first_extradesc = NULL;
+handler.c:3853:   room->last_extradesc = NULL;
+handler.c:3854:   for( pexit = room->first_exit; pexit; pexit = pexit_next )
+handler.c:3862:   room->first_exit = NULL;
+handler.c:3863:   room->last_exit = NULL;
+handler.c:3864:   room->room_flags = 0;
+handler.c:3865:   room->sector_type = 0;
+handler.c:3963:   for( pReset = room->first_reset; pReset; pReset = pReset_next )
+handler.c:3969:   room->first_reset = NULL;
+handler.c:3970:   room->last_reset = NULL;
+handler.c:4511:      LINK( rest, obj->in_room->first_content, obj->in_room->last_content, next_content, prev_content );
+handler.c:4707:    tarea = mob->in_room->area;
+handler.c:4991:   strcpy( buf, ch->in_room->description );
+handler.c:5022:   switch ( ch->in_room->sector_type )
+handler.c:5028:         if( ch->in_room->curr_vegetation > 66 )
+handler.c:5030:         else if( ch->in_room->curr_vegetation > 33 )
+handler.c:5032:         else if( ch->in_room->curr_vegetation > 5 )
+handler.c:5037:         if( ch->in_room->curr_resources > 66 )
+handler.c:5039:         else if( ch->in_room->curr_resources > 33 )
+handler.c:5042:         if( ch->in_room->curr_water > 75 )
+handler.c:5044:         else if( ch->in_room->curr_water > 25 )
+handler.c:5051:         if( ch->in_room->curr_vegetation > 66 )
+handler.c:5053:         else if( ch->in_room->curr_vegetation > 33 )
+handler.c:5058:         if( ch->in_room->curr_resources > 66 )
+handler.c:5063:         if( ch->in_room->curr_water > 66 )
+handler.c:5065:         else if( ch->in_room->curr_water > 33 )
+handler.c:5072:         if( ch->in_room->curr_vegetation > 66 )
+handler.c:5074:         else if( ch->in_room->curr_vegetation > 33 )
+handler.c:5079:         if( ch->in_room->curr_water > 66 )
+handler.c:5081:         else if( ch->in_room->curr_water > 33 )
+handler.c:5086:         if( ch->in_room->curr_resources > 66 )
+handler.c:5093:         if( ch->in_room->curr_vegetation > 66 )
+handler.c:5095:         else if( ch->in_room->curr_vegetation > 33 )
+handler.c:5100:         if( ch->in_room->curr_water > 66 )
+handler.c:5102:         else if( ch->in_room->curr_water > 33 )
+handler.c:5107:         if( ch->in_room->curr_resources > 66 )
+handler.c:5114:         if( ch->in_room->curr_vegetation > 66 )
+handler.c:5116:         else if( ch->in_room->curr_vegetation > 33 )
+handler.c:5121:         if( ch->in_room->curr_water > 66 )
+handler.c:5123:         else if( ch->in_room->curr_water > 33 )
+handler.c:5133:         if( IS_OUTSIDE( ch ) && ( ( ch->in_room->area->weather->temp + 3 * weath_unit - 1 ) / weath_unit < 3 ) )
+handler.c:5142:         if( IS_OUTSIDE( ch ) && ( ( ch->in_room->area->weather->temp + 3 * weath_unit - 1 ) / weath_unit < 3 ) )
+handler.c:5154:         if( ch->in_room->curr_vegetation > 66 )
+handler.c:5156:         else if( ch->in_room->curr_vegetation > 33 )
+handler.c:5166:         if( ch->in_room->curr_vegetation > 66 )
+handler.c:5168:         else if( ch->in_room->curr_vegetation > 33 )
+handler.c:5170:         else if( ch->in_room->curr_resources > 66 )
+handler.c:5177:         if( ch->in_room->curr_vegetation > 66 )
+handler.c:5179:         else if( ch->in_room->curr_vegetation > 33 )
+handler.c:5184:         if( ch->in_room->curr_resources > 66 )
+handler.c:5193:         if( ch->in_room->curr_vegetation > 66 )
+handler.c:5195:         else if( ch->in_room->curr_vegetation > 33 )
+handler.c:5204:         if( ch->in_room->curr_vegetation > 66 )
+handler.c:5206:         else if( ch->in_room->curr_vegetation > 33 )
+handler.c:5223:      if( IS_SET( ch->in_room->room_flags, ROOM_NO_MAGIC ) )
+handler.c:5225:      if( IS_SET( ch->in_room->room_flags, ROOM_SAFE ) )
+handler.c:5227:      if( IS_SET( ch->in_room->room_flags, ROOM_NO_RECALL ) )
+handler.c:5229:      if( IS_SET( ch->in_room->room_flags, ROOM_NO_SUMMON ) )
+handler.c:5231:      if( IS_SET( ch->in_room->room_flags, ROOM_NO_ASTRAL ) )
+handler.c:5233:      if( IS_SET( ch->in_room->room_flags, ROOM_NOSUPPLICATE ) )
+handler.c:5237:   if( IS_SET( ch->in_room->room_flags, ROOM_DARK ) )
+handler.c:5239:   if( IS_SET( ch->in_room->room_flags, ROOM_TUNNEL ) )
+handler.c:5241:   if( IS_SET( ch->in_room->room_flags, ROOM_PRIVATE ) )
+handler.c:5243:   if( IS_SET( ch->in_room->room_flags, ROOM_SOLITARY ) )
+handler.c:5245:   if( IS_SET( ch->in_room->room_flags, ROOM_NOFLOOR ) )
+handler.c:5247:   if( IS_SET( ch->in_room->room_flags, ROOM_AMPLIFY ) )
+handler.c:5249:   if( IS_SET( ch->in_room->room_flags, ROOM_NOMISSILE ) )
+handler.c:5251:   if( IS_SET( ch->in_room->room_flags, ROOM_STICKY ) )
+handler.c:5253:   if( IS_SET( ch->in_room->room_flags, ROOM_SLIPPERY ) )
+handler.c:5255:   if( IS_SET( ch->in_room->room_flags, ROOM_BURNING ) )
+handler.c:5257:   if( ch->in_room->runes )
+handler.c:5264:   for( pexit = ch->in_room->first_exit; pexit; pexit = pexit->next )
+handler.c:5299:            if( pexit->to_room->sector_type != ch->in_room->sector_type )
+handler.c:5302:               switch ( pexit->to_room->sector_type )
+handler.c:5326:                     if( IS_OUTSIDE( ch ) && ( ( ch->in_room->area->weather->temp + 3 * weath_unit - 1 ) / weath_unit < 3 ) )
+handler.c:5335:                     if( IS_OUTSIDE( ch ) && ( ( ch->in_room->area->weather->temp + 3 * weath_unit - 1 ) / weath_unit < 3 ) )
+handler.c:5384:/*	for (obj = ch->in_room->first_content; obj; obj = obj->next_content) {
+handler.c:5472:   for( trail = ch->in_room->first_trail; trail; trail = trail->next )
+handler.c:5498:          ( ch->in_room->sector_type < 6 || ch->in_room->sector_type == 10 || ch->in_room->sector_type == 13 ) )
+handler.c:5540:      if( IS_OUTSIDE( ch ) && ( ( ch->in_room->area->weather->temp + 3 * weath_unit - 1 ) / weath_unit < 3 )
+handler.c:5541:          && ( ( ch->in_room->area->weather->precip + 3 * weath_unit - 1 ) / weath_unit > 3 ) )
+handler.c:5559:             && ch->in_room->sector_type != 0
+handler.c:5560:             && ch->in_room->sector_type != 1
+handler.c:5561:             && ch->in_room->sector_type < 6
+interp.c:474:               ch->in_room ? ch->in_room->vnum : 0, time_used.tv_sec, time_used.tv_usec );
+interp.c:478:               ch->in_room ? ch->in_room->vnum : 0, time_used.tv_sec, time_used.tv_usec );
+magic.c:547:   for( rch = ch->in_room->first_person; rch; rch = rch->next_in_room )
+magic.c:1200:         if( IS_SET( ch->in_room->room_flags, ROOM_NO_MAGIC ) )
+magic.c:1550:      for( vch = ch->in_room->first_person; vch; vch = vch_next )
+magic.c:1577:   if( IS_SET( ch->in_room->room_flags, ROOM_NO_MAGIC ) )
+magic.c:1584:   if( IS_SET( ch->in_room->room_flags, ROOM_SAFE ) && skill->target == TAR_CHAR_OFFENSIVE )
+magic.c:1918:         ||IS_SET( ch->in_room->room_flags, ROOM_INDOORS ) 
+magic.c:1919:         ||IS_SET( victim->in_room->room_flags, ROOM_INDOORS )  ||IS_SET( victim->in_room->room_flags, ROOM_PROTOTYPE ) )
+magic.c:2050:   if( !ch->in_room->first_content )
+magic.c:2056:   for( obj = ch->in_room->first_content; obj; obj = obj->next_content )
+magic.c:2109:   ch_printf( ch, "You are in %s in %s, on the world of %s.\n\r", ch->in_room->name, ch->in_room->area->name,
+magic.c:2110:               ch->in_room->area->resetmsg );
+magic.c:2111:   switch ( ch->in_room->sector_type )
+magic.c:2169:   if( ch->in_room->room_flags )
+magic.c:2170:      ch_printf( ch, "It seems to be %s.\n\r", flag_string( ch->in_room->room_flags, r_flags ) );
+magic.c:2171:   temp = ch->in_room->curr_water;
+magic.c:2175:   temp = ch->in_room->curr_vegetation;
+magic.c:2177:   temp = ch->in_room->curr_resources;
+magic.c:2180:   if( ch->in_room->runes )
+magic.c:2181:      ch_printf( ch, "Runes of %s line the walls.\n\r", flag_string( ch->in_room->runes, rune_flags ) );
+magic.c:2329:          ||IS_SET( victim->in_room->room_flags, ROOM_PRIVATE ) 
+magic.c:2330:          ||IS_SET( victim->in_room->room_flags, ROOM_SOLITARY ) 
+magic.c:2331:          ||IS_SET( victim->in_room->room_flags, ROOM_NO_ASTRAL ) 
+magic.c:2332:          ||IS_SET( victim->in_room->room_flags, ROOM_NO_RECALL ) 
+magic.c:2333:          ||IS_SET( victim->in_room->room_flags, ROOM_PROTOTYPE ) 
+magic.c:2334:          ||IS_SET( ch->in_room->room_flags, ROOM_NO_RECALL ) 
+magic.c:2335:          ||IS_SET( ch->in_room->room_flags, ROOM_NO_ASTRAL ) 
+magic.c:2348:   targetRoomVnum = victim->in_room->vnum;
+magic.c:2355:      for( pexit = fromRoom->first_exit; pexit; pexit = pexit->next )
+magic.c:2371:   for( pexit = targetRoom->first_exit; pexit; pexit = pexit->next )
+magic.c:2604:   if( IS_SET( ch->in_room->room_flags, ROOM_SAFE ) )
+magic.c:2615:   for( vch = ch->in_room->first_person; vch; vch = vch_next )
+magic.c:2850:         victim = victim->in_room->first_person;
+magic.c:2853:         victim = ch->in_room->first_person;
+magic.c:2943:            WEATHER_DATA * weath = ch->in_room->area->weather;
+magic.c:3203:      if( ch && ch->name && ch->in_room && ch->in_room->vnum )
+magic.c:3204:         bug( "bad skill %d passed to spell_smaug: ch->name %s, room %d", sn, ch->name, ch->in_room->vnum );
+magic.c:3209:   if( SPELL_FLAG( skill, SF_EARTH )  &&( ch->in_room->curr_vegetation < 33 ) )
+magic.c:3214:   if( SPELL_FLAG( skill, SF_AIR )  &&( ch->in_room->curr_water >= 100 ) )
+magic.c:3220:   if( SPELL_FLAG( skill, SF_WATER )  &&( ch->in_room->curr_water < 33 ) )
+magic.c:3230:   if( SPELL_FLAG( skill, SF_GROUND )  &&( IS_SET( ch->in_room->room_flags, ROOM_NOFLOOR ) ) )
+magic.c:3328:   amount += number_range( -10, ( ch->in_room->area->weather->mana * 10 ) - amount );
+magic.c:3341:   ch->in_room->area->weather->mana -= ( int )amount / 100;
+magic.c:3405:   weath = ch->in_room->area->weather;
+makeobjs.c:1622:   shop = ch->in_room->pShop;
+makeobjs.c:2019:               for( fire = ch->in_room->first_content; fire; fire = fire->next_content )
+makeobjs.c:2221:      if( ( ch = obj->in_room->first_person ) != NULL )
+makeobjs.c:2267:            ch->in_room->area->gold_looted += ch->gold;
+makeobjs.c:2300:            ch->in_room->area->gold_looted += ch->gold;
+makeobjs.c:2415:   for( obj = ch->in_room->first_content; obj; obj = obj->next_content )
+misc.c:142:   for( tch = ch->in_room->first_person; tch; tch = tch->next_in_room )
+misc.c:301:   if( ch->in_room->pShop )
+misc.c:455:      for( source = ch->in_room->first_content; source; source = src_next )
+misc.c:728:      for( obj = ch->in_room->first_content; obj; obj = obj->next_content )
+misc.c:953:                ( ch->in_room->sector_type == SECT_UNDERWATER || ch->in_room->sector_type == SECT_WATER_SWIM
+misc.c:954:                  || ch->in_room->sector_type ==
+misc.c:955:                  SECT_WATER_NOSWIM ) ? "dissolves in the water" : ( ch->in_room->sector_type == SECT_AIR
+misc.c:956:                                                                      || IS_SET( ch->in_room->room_flags,
+misc.c:1332:      for( rch = room->first_person; rch; rch = rch->next_in_room )
+misc.c:1455:         for( rch = room->first_person; rch; rch = rch->next_in_room )
+misc.c:1465:               for( rch = pexit->to_room->first_person; rch; rch = rch->next_in_room )
+misc.c:1475:         for( rch = room->first_person; rch; rch = rch->next_in_room )
+misc.c:1485:               for( rch = pexit->to_room->first_person; rch; rch = rch->next_in_room )
+misc.c:1579:         for( rch = to_room->first_person; rch; rch = rch->next_in_room )
+misc.c:1755:   if( ch->in_room->pShop )
+misc.c:1871:            if( IS_SET( ch->in_room->room_flags, ROOM_NODROP )  ||xIS_SET( ch->act, PLR_LITTERBUG ) )
+misc.c:1880:            if( IS_SET( ch->in_room->room_flags, ROOM_NODROPALL ) )
+misc.c:2151:      ch = obj->in_room->first_person;
+misc.c:2219:         for( rec = d->character->in_room->first_content; rec; rec = rec->next_content )
+mud_comm.c:182:   if( xIS_EMPTY( ch->in_room->progtypes ) )
+mud_comm.c:188:   pager_printf( ch, "Name: %s.  Vnum: %d.\n\r", ch->in_room->name, ch->in_room->vnum );
+mud_comm.c:189:   for( mprg = ch->in_room->mudprogs; mprg; mprg = mprg->next )
+mud_comm.c:350:   for( pexit = was_in_room->first_exit; pexit; pexit = pexit->next )
+mud_comm.c:473:   shop = ch->in_room->pShop;
+mud_comm.c:481:   obj = ch->in_room->first_content;
+mud_comm.c:510:         fold_area( ch->in_room->area, ch->in_room->area->filename, FALSE );
+mud_comm.c:654:      for( victim = ch->in_room->first_person; victim; victim = vnext )
+mud_comm.c:661:      while( ch->in_room->first_content )
+mud_comm.c:663:         if( IS_OBJ_STAT( ch->in_room->first_content, ITEM_ARTIFACT ) )
+mud_comm.c:665:            obj = ch->in_room->first_content;
+mud_comm.c:681:            extract_obj( ch->in_room->first_content );
+mud_comm.c:785:   for( fch = in_room->first_person; fch; fch = fch_next )
+mud_comm.c:866:      for( victim = ch->in_room->first_person; victim; victim = nextinroom )
+mud_comm.c:890:              || !can_see( ch, d->character )  ||ch->in_room->area != d->character->in_room->area )
+mud_comm.c:958:      for( vch = ch->in_room->first_person; vch; vch = vch->next_in_room )
+mud_comm.c:1003:      if( vch->in_room->area == ch->in_room->area  &&!IS_NPC( vch )  &&IS_AWAKE( vch ) )
+mud_comm.c:1236:      for( victim = ch->in_room->first_person; victim; victim = nextinroom )
+mud_comm.c:1629:      boost_economy( ch->in_room->area, gold );
+mud_comm.c:1649:   if( ch->gold < 1000000000 && gold < 1000000000 && ch->in_room  &&economy_has( ch->in_room->area, gold ) )
+mud_comm.c:1653:      lower_economy( ch->in_room->area, gold );
+mud_comm.c:1706:      for( rch = ch->in_room->first_person; rch; rch = rch->next_in_room )
+mud.h:3285:				    (ch)->in_room->room_flags,		    \
+mud.h:3287:				    (ch)->in_room->room_flags,              \
+mud.h:3290:#define IS_UNDERWATER(ch)	((((ch)->in_room->sector_type == SECT_WATER_SWIM \
+mud.h:3291:				|| (ch)->in_room->sector_type == SECT_WATER_NOSWIM \
+mud.h:3292:				|| (ch)->in_room->sector_type == SECT_UNDERWATER) \
+mud.h:3294:				|| ((ch)->in_room->sector_type == SECT_OCEANFLOOR \
+mud.h:3295:				|| (ch)->in_room->sector_type == SECT_LAVA))
+mud.h:3316:				IS_SET(ch->in_room->room_flags, ROOM_SILENCE)))
+mud_prog.c:353:      return mprog_veval( ( ( room->area->high_economy > 0 ) ? 1000000000 : 0 ) 
+mud_prog.c:354:                           +room->area->low_economy, opr, atoi( rval ), mob );
+mud_prog.c:386:            if( tmob->in_room->area == mob->in_room->area )
+mud_prog.c:414:      for( oMob = mob->in_room->first_person; oMob; oMob = oMob->next_in_room )
+mud_prog.c:487:    for ( pObj = mob->in_room->first_content; pObj;
+mud_prog.c:495:      for( pObj = mob->in_room->first_content; pObj; pObj = pObj->next_content )
+mud_prog.c:529:    for ( pObj = mob->in_room->first_content; pObj;
+mud_prog.c:537:      for( pObj = mob->in_room->first_content; pObj; pObj = pObj->next_content )
+mud_prog.c:561:      for( pObj = mob->in_room->first_content; pObj; pObj = pObj->next_content )
+mud_prog.c:590:      for( pObj = mob->in_room->first_content; pObj; pObj = pObj->next_content )
+mud_prog.c:908:         return mprog_veval( chkchar->in_room->vnum, opr, atoi( rval ), mob );
+mud_prog.c:915:         return mprog_veval( chkchar->was_in_room->vnum, opr, atoi( rval ), mob );
+mud_prog.c:920:         return IS_SET( chkchar->in_room->room_flags, ROOM_NO_RECALL ) ? TRUE : FALSE;
+mud_prog.c:1163:      for( ch = mob->in_room->first_person; ch; ch = ch->next_in_room )
+mud_prog.c:1178:         if( ( !IS_NPC( ch ) ) && ch->in_room->area == anchor->in_room->area )
+mud_prog.c:1190:      room = get_room_index( rvnum ? rvnum : mob->in_room->vnum );
+mud_prog.c:1191:      for( tch = room ? room->first_person : NULL; tch; tch = tch->next_in_room )
+mud_prog.c:1203:      room = get_room_index( rvnum ? rvnum : mob->in_room->vnum );
+mud_prog.c:1204:      for( tch = room ? room->first_person : NULL; tch; tch = tch->next_in_room )
+mud_prog.c:1216:      room = get_room_index( rvnum ? rvnum : mob->in_room->vnum );
+mud_prog.c:1217:      for( tch = room ? room->first_person : NULL; tch; tch = tch->next_in_room )
+mud_prog.c:1734:   for( vch = mob->in_room->first_person; vch; vch = vch->next_in_room )
+mud_prog.c:2473:      for( vmob = ch->in_room->first_person; vmob; vmob = vmob_next )
+mud_prog.c:2528:   for( vmob = actor->in_room->first_person; vmob; vmob = vmob->next_in_room )
+mud_prog.c:2572:      for( mprg = room->mudprogs; mprg; mprg = mprg->next )
+mud_prog.c:2576:            if( mprg->arglist[0] == '\0'  ||room->mpscriptpos != 0  ||atoi( mprg->arglist ) == time_info.hour )
+mud_prog.c:2581:               room->mpscriptpos = supermob->mpscriptpos;
+mud_prog.c:2680:   for( vobj = ch->in_room->first_content; vobj; vobj = vobj->next_content )
+mud_prog.c:2696:      for( vobj = ch->in_room->first_content; vobj; vobj = vobj->next_content )
+mud_prog.c:2984:      supermob->short_descr = QUICKLINK( room->name );
+mud_prog.c:2988:    supermob->name        = QUICKLINK(room->name); */ 
+mud_prog.c:2989:         supermob->mpscriptpos = room->mpscriptpos;
+mud_prog.c:2995:         sprintf( buf, "Room #%d", room->vnum );
+mud_prog.c:3007:   for( mprg = mob->in_room->mudprogs; mprg; mprg = mprg->next )
+mud_prog.c:3034:      if( room->mpactnum > 0 )
+mud_prog.c:3035:         tmp_act->next = room->mpact;
+mud_prog.c:3039:      room->mpact = tmp_act;
+mud_prog.c:3040:      room->mpact->buf = str_dup( buf );
+mud_prog.c:3041:      room->mpact->ch = ch;
+mud_prog.c:3042:      room->mpact->obj = obj;
+mud_prog.c:3043:      room->mpact->vo = vo;
+mud_prog.c:3044:      room->mpactnum++;
+mud_prog.c:3151:   for( mprg = room->mudprogs; mprg; mprg = mprg->next )
+mud_prog.c:3209:   for( mprg = room->mudprogs; mprg; mprg = mprg->next )
+mud_prog.c:3307:      while( ( mpact = room->mpact ) != NULL )
+mud_prog.c:3312:         room->mpact = mpact->next;
+mud_prog.c:3316:      room->mpact = NULL;
+mud_prog.c:3317:      room->mpactnum = 0;
+player.c:1108:   if( ch->in_room->pShop && !str_cmp( ch->in_room->pShop->owner, ch->name ) )
+player.c:1113:         amount = ch->in_room->pShop->gold;
+player.c:1123:      if( amount > ch->in_room->pShop->gold )
+player.c:1135:      if( ch->in_room->pShop->gold < 1000000 )
+player.c:1136:         salary = ( gp * ch->in_room->pShop->profit_buy ) / 100;
+player.c:1138:         salary = ( gp / 100 ) * ch->in_room->pShop->profit_buy;
+player.c:1159:      ch->in_room->pShop->gold -= amount;
+player.c:1165:      fold_area( ch->in_room->area, ch->in_room->area->filename, FALSE );
+player.c:1169:   for( atm = ch->in_room->first_content; atm; atm = atm->next_content )
+player.c:1266:   if( ch->in_room->pShop && !str_cmp( ch->in_room->pShop->owner, ch->name ) )
+player.c:1298:      ch->in_room->pShop->gold += amount;
+player.c:1302:      fold_area( ch->in_room->area, ch->in_room->area->filename, FALSE );
+player.c:1306:   for( atm = ch->in_room->first_content; atm; atm = atm->next_content )
+reset.c:23: * of them good.  The most important are your pRoom->contents,
+reset.c:24: * pRoom->people, rch->carrying, obj->contains, and pArea->reset_first ..
+reset.c:77:            strncpy( roomname, room->name, MAX_STRING_LENGTH );
+reset.c:148:            strncpy( roomname, room->name, MAX_STRING_LENGTH );
+reset.c:195:            strncpy( roomname, room->name, MAX_STRING_LENGTH );
+reset.c:222:            strncpy( roomname, room->name, MAX_STRING_LENGTH );
+reset.c:231:            strncpy( roomname, room->name, MAX_STRING_LENGTH );
+reset.c:234:                   roomname, room ? room->vnum : 0 );
+reset.c:306:   for( rch = pRoom->first_person; rch; rch = rch->next_in_room )
+reset.c:311:      add_reset( pRoom, 'M', 1, rch->pIndexData->vnum, rch->pIndexData->count, pRoom->vnum );
+reset.c:321:   for( obj = pRoom->first_content; obj; obj = obj->next_content )
+reset.c:322:      add_obj_reset( pRoom, 'O', obj, obj->count, pRoom->vnum );
+reset.c:327:      for( pexit = pRoom->first_exit; pexit; pexit = pexit->next )
+reset.c:341:         add_reset( pRoom, 'D', 0, pRoom->vnum, pexit->vdir, state );
+reset.c:351:   for( pReset = room->first_reset; pReset; pReset = pReset_next )
+reset.c:355:      UNLINK( pReset, room->first_reset, room->last_reset, next, prev );
+reset.c:358:   room->first_reset = room->last_reset = NULL;
+reset.c:369:      for( room = area->first_room; room; room = room->next_aroom )
+reset.c:391:   if( ch->in_room->area != ch->pcdata->area )
+reset.c:396:   if( ch->in_room->first_reset )
+reset.c:420:   for( pRoom = pArea->first_room; pRoom; pRoom = pRoom->next_aroom )
+reset.c:460:   char *filename = room->area->filename;
+reset.c:466:   if( !room->first_reset )
+reset.c:472:   if( IS_SET( room->room_flags, ROOM_BURNING ) )
+reset.c:474:      if( room->curr_vegetation > 0 && room->curr_water < 30 )
+reset.c:475:         room->curr_vegetation -= 25;
+reset.c:478:         REMOVE_BIT( room->room_flags, ROOM_BURNING );
+reset.c:480:   else if( room->curr_vegetation < room->vegetation ) {
+reset.c:481:         room->curr_vegetation++;
+reset.c:487:			if( room->curr_water > room->water )
+reset.c:489:			room->curr_water--;
+reset.c:493:   for( pReset = room->first_reset; pReset; pReset = pReset->next )
+reset.c:707:                              if( room->area->nplayer > 0 || !( to_obj = get_obj_type( pObjToIndex ) ) ||
+reset.c:739:                                room->vnum );
+reset.c:780:               bug( "%s: Object trap found in room %d reset list", __FUNCTION__, room->vnum );
+reset.c:790:               if( room->area->nplayer > 0
+reset.c:847:   for( room = area->first_room; room; room = room->next_aroom )
+reset.c:857:   for( pReset = room->first_reset; pReset; pReset = pReset->next )
+reset.c:908:         room->last_mob_reset = pReset;
+reset.c:913:         if( !room->last_mob_reset )
+reset.c:918:         room->last_obj_reset = pReset;
+reset.c:919:         LINK( pReset, room->last_mob_reset->first_reset, room->last_mob_reset->last_reset, next_reset, prev_reset );
+reset.c:923:         if( !room->last_obj_reset )
+reset.c:928:         LINK( pReset, room->last_obj_reset->first_reset, room->last_obj_reset->last_reset, next_reset, prev_reset );
+reset.c:932:         room->last_obj_reset = pReset;
+reset.c:939:            pReset->next_reset = room->last_obj_reset->first_reset;
+reset.c:940:            if( room->last_obj_reset->first_reset )
+reset.c:941:               room->last_obj_reset->first_reset->prev_reset = pReset;
+reset.c:942:            room->last_obj_reset->first_reset = pReset;
+reset.c:943:            if( !room->last_obj_reset->last_reset )
+reset.c:944:               room->last_obj_reset->last_reset = pReset;
+reset.c:951:         pReset->next_reset = room->last_obj_reset->first_reset;
+reset.c:952:         if( room->last_obj_reset->first_reset )
+reset.c:953:            room->last_obj_reset->first_reset->prev_reset = pReset;
+reset.c:954:         room->last_obj_reset->first_reset = pReset;
+reset.c:955:         if( !room->last_obj_reset->last_reset )
+reset.c:956:            room->last_obj_reset->last_reset = pReset;
+reset.c:959:   LINK( pReset, room->first_reset, room->last_reset, next, prev );
+reset.c:970:   for( pReset = room->first_reset; pReset; pReset = pReset->next )
+reset.c:1003:      reset_area( ch->in_room->area );
+reset.c:1027:      for( pReset = ch->in_room->first_reset; pReset; pReset = pReset_next )
+reset.c:1034:            UNLINK( pReset, ch->in_room->first_reset, ch->in_room->last_reset, next, prev );
+reset.c:1096:      pReset = make_reset( 'R', 0, ch->in_room->vnum, vnum, 0 );
+reset.c:1098:      pReset->next = ch->in_room->first_reset;
+reset.c:1099:      if( ch->in_room->first_reset->prev )
+reset.c:1100:         ch->in_room->first_reset->prev = pReset;
+reset.c:1101:      ch->in_room->first_reset = pReset;
+reset.c:1102:      if( !ch->in_room->last_reset )
+reset.c:1103:         ch->in_room->last_reset = pReset;
+reset.c:1118:         vnum = ch->in_room->vnum;
+reset.c:1185:         tReset->next = ch->in_room->first_reset;
+reset.c:1186:         if( ch->in_room->first_reset->prev )
+reset.c:1187:            ch->in_room->first_reset->prev = tReset;
+reset.c:1188:         ch->in_room->first_reset = tReset;
+reset.c:1189:         if( !ch->in_room->last_reset )
+reset.c:1190:            ch->in_room->last_reset = tReset;
+reset.c:1219:         tReset->next = ch->in_room->first_reset;
+reset.c:1220:         if( ch->in_room->first_reset->prev )
+reset.c:1221:            ch->in_room->first_reset->prev = tReset;
+reset.c:1222:         ch->in_room->first_reset = tReset;
+reset.c:1223:         if( !ch->in_room->last_reset )
+reset.c:1224:            ch->in_room->last_reset = tReset;
+save.c:246:              && ch->was_in_room ) ? ch->was_in_room->vnum : ch->in_room->vnum );
+save.c:618:      fprintf( fp, "Room         %d\n", obj->in_room->vnum );
+save.c:2380:                    && mob->was_in_room ) ? mob->was_in_room->vnum : mob->in_room->vnum );
+save.c:2600:         return obj->carried_by->in_room->vnum;
+save.c:2610:      return obj->in_room->vnum;
+save.c:2663:             || IS_SET( obj->in_room->room_flags, ROOM_DONATION ) )
+shops.c:88:   if( ( matshop = find_matshop( ch->in_room->vnum ) ) != NULL )
+shops.c:113:            boost_economy( ch->in_room->area, mat->cost );
+shops.c:123:   if( !ch->in_room->pShop )
+shops.c:128:   if( !str_cmp( ch->in_room->pShop->owner, "(for sale)" ) )
+shops.c:140:         STRFREE( ch->in_room->pShop->owner );
+shops.c:141:         ch->in_room->pShop->owner = STRALLOC( ch->name );
+shops.c:142:         fold_area( ch->in_room->area, ch->in_room->area->filename, FALSE );
+shops.c:146:   maxgold = ch->in_room->pShop->gold;
+shops.c:157:   obj = get_obj_list( ch, arg, ch->in_room->first_content );
+shops.c:163:   cost = ( get_cost( ch, ch->in_room->pShop, obj, TRUE ) * noi );
+shops.c:211:      ch->in_room->pShop->gold += cost;
+shops.c:216:      if( str_cmp( ch->in_room->pShop->owner, "Keolah" ) )
+shops.c:223:            fold_area( ch->in_room->area, ch->in_room->area->filename, FALSE );
+shops.c:283:   if( ( matshop = find_matshop( ch->in_room->vnum ) ) != NULL )
+shops.c:301:   if( !ch->in_room->pShop )
+shops.c:307:   for( obj = ch->in_room->first_content; obj; obj = obj->next_content )
+shops.c:311:           &&( cost = get_cost( ch, ch->in_room->pShop, obj, TRUE ) ) > 0 
+shops.c:318:         gp = get_cost( ch, ch->in_room->pShop, obj, TRUE );
+shops.c:351:   if( !ch->in_room->pShop )
+shops.c:362:   if( !str_cmp( arg, "shop" )  &&!str_cmp( ch->name, ch->in_room->pShop->owner ) )
+shops.c:368:      STRFREE( ch->in_room->pShop->owner );
+shops.c:369:      ch->in_room->pShop->owner = STRALLOC( "(for sale)" );
+shops.c:370:      fold_area( ch->in_room->area, ch->in_room->area->filename, FALSE );
+shops.c:403:      if( ( cost = get_cost( ch, ch->in_room->pShop, obj, FALSE ) ) <= 0 )
+shops.c:409:      if( ch->in_room->pShop->type != -1  &&ch->in_room->pShop->type != obj->item_type )
+shops.c:414:      if( ch->in_room->pShop->flag != -1  &&!xIS_SET( obj->extra_flags, ch->in_room->pShop->flag ) )
+shops.c:420:      if( !str_cmp( ch->in_room->pShop->owner, ch->name ) )
+shops.c:428:      else if( ch->in_room->pShop->gold < obj->cost  &&str_cmp( ch->in_room->pShop->owner, "Keolah" ) )
+shops.c:434:      gp = get_cost( ch, ch->in_room->pShop, obj, FALSE );
+shops.c:443:      ch->in_room->pShop->gold -= cost;
+shops.c:480:            if( ( cost = get_cost( ch, ch->in_room->pShop, obj, FALSE ) ) <= 0 )
+shops.c:482:            if( ch->in_room->pShop->type != -1  &&ch->in_room->pShop->type != obj->item_type )
+shops.c:484:            if( ch->in_room->pShop->flag != -1  &&!xIS_SET( obj->extra_flags, ch->in_room->pShop->flag ) )
+shops.c:486:            if( ch->in_room->pShop->gold < obj->cost 
+shops.c:487:                  &&str_cmp( ch->in_room->pShop->owner, "Keolah" )  &&str_cmp( ch->in_room->pShop->owner, ch->name ) )
+shops.c:491:            cost = get_cost( ch, ch->in_room->pShop, obj, FALSE );
+shops.c:492:            if( str_cmp( ch->in_room->pShop->owner, ch->name ) )
+shops.c:495:               ch->in_room->pShop->gold -= cost;
+shops.c:503:         if( !str_cmp( ch->in_room->pShop->owner, ch->name ) )
+shops.c:543:   if( !ch->in_room->pShop )
+shops.c:554:   if( ( gp = get_cost( ch, ch->in_room->pShop, obj, FALSE ) ) <= 0 )
+shops.c:691:      vnum = ch->in_room->vnum;
+shops.c:704:   if( room->pShop )
+shops.c:719:   room->pShop = shop;
+shops.c:757:   if( !( shop = room->pShop ) )
+shops.c:776:      fold_area( room->area, room->area->filename, FALSE );
+shops.c:797:      fold_area( room->area, room->area->filename, FALSE );
+shops.c:828:      fold_area( room->area, room->area->filename, FALSE );
+shops.c:852:      fold_area( room->area, room->area->filename, FALSE );
+shops.c:878:      fold_area( room->area, room->area->filename, FALSE );
+shops.c:897:      room->pShop = NULL;
+shops.c:900:      ch_printf( ch, "Shop %d is now Shop %d.\n\r", room->vnum, shop->room );
+shops.c:901:      fold_area( room->area, room->area->filename, FALSE );
+shops.c:938:         if( !tmproom || room->area != tmproom->area )
+shops.c:939:            fold_area( room->area, room->area->filename, FALSE );
+shops.c:957:      vnum = ch->in_room->vnum;
+shops.c:971:   if( !room->pShop )
+shops.c:977:   shop = room->pShop;
+shops.c:980:      ch_printf( ch, "Room: [%d] %s\n\r", shop->room, room->name );
+shops.c:982:      ch_printf( ch, "Stats for %s...\n\r", room->name );
+skills.c:393:            ch->in_room->area->weather->mana += ( int )mana / 10;
+skills.c:401:         ch->in_room->area->weather->mana += ( int )mana / 10;
+skills.c:428:      ch->in_room->area->weather->mana += ( int )mana / 10;
+skills.c:1693:         if( !ch->in_room->first_content )
+skills.c:1699:         for( obj = ch->in_room->first_content; obj; obj = obj->next_content )
+skills.c:1739:   if( !ch->in_room->first_content )
+skills.c:1745:   for( obj = ch->in_room->first_content; obj; obj = obj->next_content )
+skills.c:1835:            switch ( ch->in_room->sector_type )
+skills.c:1919:   startobj = ch->in_room->first_content;
+skills.c:1937:   if( !found && number_range( 1, 300 ) < ch->in_room->curr_resources 
+skills.c:1938:        +get_curr_per( ch ) + ch->pcdata->noncombat[SK_MINING]  &&ch->in_room->curr_resources > 0 )
+skills.c:1943:         if( ( ( !shovel && number_percent(  ) < 50 ) || ( shovel ) ) && ( material->sector == ch->in_room->sector_type )
+skills.c:1950:               if( xIS_SET( material->extra_flags, ITEM_MAGIC )  &&ch->in_room->area->weather->mana < -100 )
+skills.c:1956:               ch->in_room->curr_resources--;
+skills.c:1969:      if( ch->in_room->curr_resources < 10 )
+skills.c:2046:      startobj = ch->in_room->first_content;
+skills.c:2101:   if( number_range( 1, 300 ) < ch->in_room->curr_vegetation 
+skills.c:2102:        +get_curr_per( ch ) + ch->pcdata->noncombat[SK_NATURE]  &&ch->in_room->curr_vegetation > 0 )
+skills.c:2107:         if( ingred->sector != ch->in_room->sector_type )
+skills.c:2109:         if( ingred->moisture > ch->in_room->curr_water )
+skills.c:2111:         if( ingred->elevation > ch->in_room->curr_elevation )
+skills.c:2113:         if( ingred->precip > 0  &&ingred->precip < ch->in_room->area->weather->precip )
+skills.c:2115:         if( ingred->precip < 0  &&ingred->precip > ch->in_room->area->weather->precip )
+skills.c:2117:         if( ingred->temp > 0  &&ingred->temp < ch->in_room->area->weather->temp )
+skills.c:2119:         if( ingred->temp < 0  &&ingred->temp > ch->in_room->area->weather->temp )
+skills.c:2121:         if( ingred->mana > 0  &&ingred->mana < ch->in_room->area->weather->mana )
+skills.c:2135:            ch->in_room->curr_vegetation--;
+skills.c:2181:   if( IS_SET( ch->in_room->room_flags, ROOM_SAFE ) )
+skills.c:2620:      fold_area( ch->in_room->area, ch->in_room->area->filename, FALSE );
+skills.c:2621:      if( pexit->to_room->area != ch->in_room->area )
+skills.c:2622:         fold_area( pexit->to_room->area, pexit->to_room->area->filename, FALSE );
+skills.c:2659:      for( gch = ch->in_room->first_person; gch; gch = gch->next_in_room )
+skills.c:3146:   victim->in_room->area->weather->mana += 1;
+skills.c:3385:      ch->in_room->area->weather->mana += ( int )mana / 10;
+skills.c:3395:      ch->in_room->area->weather->mana += ( int )mana / 10;
+skills.c:3418:   ch->in_room->area->weather->mana += ( int )mana / 10;
+skills.c:3475:   for( fire = ch->in_room->first_content; fire; fire = fire->next_content )
+skills.c:3509:      ch->in_room->area->weather->mana += ( int )mana / 10;
+skills.c:3519:      ch->in_room->area->weather->mana += ( int )mana / 10;
+skills.c:3542:   ch->in_room->area->weather->mana += ( int )mana / 10;
+skills.c:3587:             * victim->in_room->vnum );
+skills.c:3677:      send_to_char( ch->in_room->name, ch );
+skills.c:3679:      show_list_to_char( ch->in_room->first_content, ch, FALSE, FALSE );
+skills.c:3680:      show_char_to_char( ch->in_room->first_person, ch );
+skills.c:3681:      switch ( ch->in_room->sector_type )
+skills.c:3767:      switch ( ch->in_room->sector_type )
+skills.c:3848:   if( IS_SET( ch->in_room->room_flags, ROOM_SAFE ) )
+skills.c:3999:      for( obj = ch->in_room->first_content; obj; obj = obj->next_content )
+skills.c:4016:      if( ch->in_room->curr_water > 50 )
+skills.c:4020:         for( obj = ch->in_room->first_content; obj; obj = obj->next_content )
+skills.c:4037:      for( obj = ch->in_room->first_content; obj; obj = obj->next_content )
+skills.c:4071:      if( ch->in_room->area->weather->temp > -200  &&ch->curr_talent[TAL_FROST] < 20 )
+special.c:157:   for( victim = ch->in_room->first_person; victim; victim = v_next )
+special.c:344:   for( corpse = ch->in_room->first_content; corpse; corpse = c_next )
+special.c:374:   for( victim = ch->in_room->first_person; victim; victim = v_next )
+special.c:400:   for( trash = ch->in_room->first_content; trash; trash = trash_next )
+special.c:443:   for( victim = ch->in_room->first_person; victim; victim = v_next )
+special.c:476:      for( victim = ch->in_room->first_person; victim; victim = victim->next_in_room )
+special.c:522:      for( victim = ch->in_room->first_person; victim; victim = victim->next_in_room )
+special.c:541:      for( victim = ch->in_room->first_person; victim; victim = victim->next_in_room )
+special.c:559:      if( material->sector != ch->in_room->sector_type )
+special.c:563:      if( xIS_SET( material->extra_flags, ITEM_MAGIC )  &&ch->in_room->area->weather->mana < -100 )
+special.c:584:      for( victim = ch->in_room->first_person; victim; victim = victim->next_in_room )
+special.c:603:      for( victim = ch->in_room->first_person; victim; victim = victim->next_in_room )
+special.c:621:      if( ingred->sector != ch->in_room->sector_type )
+special.c:623:      if( ingred->moisture > ch->in_room->curr_water )
+special.c:625:      if( ingred->elevation > ch->in_room->curr_elevation )
+special.c:627:      if( ingred->precip > 0  &&ingred->precip < ch->in_room->area->weather->precip )
+special.c:629:      if( ingred->precip < 0  &&ingred->precip > ch->in_room->area->weather->precip )
+special.c:631:      if( ingred->temp > 0  &&ingred->temp < ch->in_room->area->weather->temp )
+special.c:633:      if( ingred->temp < 0  &&ingred->temp > ch->in_room->area->weather->temp )
+special.c:635:      if( ingred->mana > 0  &&ingred->mana < ch->in_room->area->weather->mana )
+talent.c:186:         ||( IS_SET( ch->in_room->room_flags, ROOM_NO_SUMMON ) 
+talent.c:188:                 ||IS_SET( ch->in_room->area->flags, AFLAG_NOBYPASS ) 
+talent.c:189:                 ||IS_SET( ch->in_room->runes, RUNE_WARD ) ) ) 
+talent.c:190:         ||( IS_SET( victim->in_room->room_flags, ROOM_NO_ASTRAL ) 
+talent.c:192:                 ||IS_SET( victim->in_room->area->flags, AFLAG_NOBYPASS ) 
+talent.c:193:                 ||IS_SET( victim->in_room->runes, RUNE_WARD ) ) ) 
+talent.c:195:             &&IS_SET( victim->in_room->room_flags, ROOM_NO_DREAM ) ) 
+talent.c:320:   for( rch = ch->in_room->first_person; rch; rch = rch->next_in_room )
+talent.c:360:   ch->in_room->area->weather->mana += ( int )i / 100;
+talent.c:692:      if( IS_SET( ch->in_room->area->flags, AFLAG_FREEKILL ) )
+talent.c:700:      location = get_room_index( ch->in_room->area->hi_soft_range );
+talent.c:748:   if( IS_SET( ch->in_room->room_flags, ROOM_NO_RECALL )  &&ch->curr_talent[TAL_MOTION] < 80 )
+talent.c:797:      if( ch->in_room->curr_vegetation < 10 )
+talent.c:802:      if( ch->in_room->curr_water > 30 )
+talent.c:810:      SET_BIT( ch->in_room->room_flags, ROOM_BURNING );
+talent.c:841:   for( victim = ch->in_room->first_person; victim; victim = next_vict )
+talent.c:863:   if( ( ch->curr_talent[TAL_EARTH] < 20 && !IS_NPC( ch ) )  ||IS_SET( ch->in_room->room_flags, ROOM_NOFLOOR ) )
+talent.c:870:   for( victim = ch->in_room->first_person; victim; victim = next_vict )
+talent.c:873:      if( IS_AFFECTED( victim, AFF_FLYING )  &&!IS_SET( ch->in_room->room_flags, ROOM_INDOORS ) )
+talent.c:892:      for( victim = ch->in_room->first_person; victim; victim = next_vict )
+talent.c:927:      for( victim = ch->in_room->first_person; victim; victim = next_vict )
+talent.c:969:      for( victim = ch->in_room->first_person; victim; victim = next_vict )
+talent.c:1002:      for( victim = ch->in_room->first_person; victim; victim = next_vict )
+talent.c:1050:   if( ch->in_room->curr_water > 60 )
+talent.c:1057:         victim = ch->in_room->first_person;
+talent.c:1070:   if( IS_SET( ch->in_room->room_flags, ROOM_INDOORS ) 
+talent.c:1071:         ||ch->in_room->area->weather->precip < 100  ||ch->in_room->area->weather->temp < 100 )
+talent.c:1095:   if( IS_SET( ch->in_room->room_flags, ROOM_INDOORS ) )
+talent.c:1102:   for( victim = ch->in_room->first_person; victim; victim = next_vict )
+talent.c:1105:      magic_damage( victim, ch, TALENT( ch, TAL_WIND ) + TALENT( ch, TAL_FIRE ) + ch->in_room->area->weather->temp,
+talent.c:1118:   if( IS_SET( ch->in_room->room_flags, ROOM_INDOORS ) )
+talent.c:1125:   for( victim = ch->in_room->first_person; victim; victim = next_vict )
+talent.c:1128:      magic_damage( victim, ch, TALENT( ch, TAL_WIND ) + TALENT( ch, TAL_CATALYSM ) + ch->in_room->area->weather->mana,
+talent.c:1140:   if( IS_SET( ch->in_room->room_flags, ROOM_INDOORS ) )
+talent.c:1161:   if( ch->in_room->curr_water >= 100 )
+talent.c:1168:   for( victim = ch->in_room->first_person; victim; victim = next_vict )
+talent.c:1203:   if( IS_SET( ch->in_room->room_flags, ROOM_INDOORS ) 
+talent.c:1204:         ||ch->in_room->area->weather->precip < 50  ||ch->in_room->area->weather->temp > -100 )
+talent.c:1211:   for( victim = ch->in_room->first_person; victim; victim = next_vict )
+talent.c:1226:   if( IS_SET( ch->in_room->room_flags, ROOM_INDOORS ) 
+talent.c:1227:         ||ch->in_room->area->weather->precip > 0 
+talent.c:1349:   if( IS_SET( ch->in_room->room_flags, ROOM_NOFLOOR ) )
+talent.c:1582:   if( IS_SET( ch->in_room->room_flags, ROOM_SILENCE )  ||( ch->curr_talent[TAL_SPEECH] < 1 && !IS_NPC( ch ) ) )
+talent.c:1591:      for( victim = ch->in_room->first_person; victim; victim = next_vict )
+talent.c:1621:   if( IS_UNDERWATER( ch ) || ch->in_room->curr_water > 30 )
+talent.c:1650:   if( ch->in_room->curr_water >= 100 )
+talent.c:1661:      for( victim = ch->in_room->first_person; victim; victim = next_vict )
+talent.c:1762:   if( ch->in_room->curr_water >= 100 )
+talent.c:1774:                   ( TALENT( ch, TAL_WIND ) * 2 + ch->in_room->area->weather->wind ) / 3, MAG_WIND, TAL_WIND, FALSE );
+talent.c:1790:                   ( TALENT( ch, TAL_EARTH ) * 2 + ch->in_room->curr_vegetation ) / 3, MAG_EARTH, TAL_EARTH, FALSE );
+talent.c:1840:   if( IS_SET( ch->in_room->room_flags, ROOM_NOFLOOR )  ||( ch->curr_talent[TAL_WATER] < 1 && !IS_NPC( ch ) ) )
+talent.c:1845:   if( ch->curr_talent[TAL_WATER] > 10  &&ch->in_room->curr_water < 100 )
+talent.c:1849:      //if( IS_SET( ch->in_room->room_flags, ROOM_INDOORS ) )
+talent.c:1850:         ch->in_room->curr_water += TALENT( ch, TAL_WATER ) / 10;
+talent.c:1854:      for( victim = ch->in_room->first_person; victim; victim = next_vict )
+talent.c:1870:                   ( TALENT( ch, TAL_WATER ) * 2 + ch->in_room->curr_water ) / 3, MAG_WATER, TAL_WATER, FALSE );
+talent.c:2007:                      in_obj->carried_by->in_room->name );
+talent.c:2011:                      in_obj->carried_by->in_room->name, in_obj->carried_by->in_room->area->name );
+talent.c:2021:            sprintf( buf, "%s is in %s.\n\r", obj_short( obj ), in_obj->in_room->name );
+talent.c:2024:            sprintf( buf, "%s is in %s, in %s.\n\r", obj_short( obj ), in_obj->in_room->name,
+talent.c:2025:                      in_obj->in_room->area->name );
+talent.c:2055:            pager_printf( ch, "%s is in %s\n\r", PERS( victim, ch ), victim->in_room->name );
+talent.c:2066:            pager_printf( ch, "%s is in %s, in %s\n\r", PERS( victim, ch ), victim->in_room->name,
+talent.c:2067:                           victim->in_room->area->name );
+talent.c:2080:   if( IS_SET( ch->in_room->room_flags, ROOM_NO_RECALL )  &&ch->curr_talent[TAL_MOTION] < 80 )
+talent.c:2288:   if( IS_SET( ch->in_room->area->flags, AFLAG_NOBYPASS ) )
+talent.c:2319:      sprintf( buf, "%s summoned %s to %s (%d).", ch->name, victim->name, ch->in_room->name, ch->in_room->vnum );
+talent.c:3146:      ch->in_room->runes = 0;
+talent.c:3312:   if( IS_SET( ch->in_room->room_flags, ROOM_NO_MAGIC ) )
+talent.c:3321:      SET_BIT( ch->in_room->runes, RUNE_LIFE );
+talent.c:3328:      SET_BIT( ch->in_room->runes, RUNE_DISTRACT );
+talent.c:3335:      SET_BIT( ch->in_room->runes, RUNE_WARD );
+talent.c:3792:      if( IS_SET( ch->in_room->room_flags, ROOM_NO_DREAM ) 
+talent.c:3794:                ||( IS_SET( ch->in_room->runes, RUNE_WARD )  &&ch->curr_talent[TAL_DREAM] < 200 ) ) )
+talent.c:3909:      if( IS_SET( victim->in_room->room_flags, ROOM_NO_DREAM ) 
+talent.c:3911:                ||( IS_SET( victim->in_room->runes, RUNE_WARD )  &&ch->curr_talent[TAL_DREAM] < 200 ) ) )
+talent.c:4041:      for( victim = ch->in_room->first_person; victim; victim = victim->next_in_room )
+talent.c:5160:         if( IS_SET( obj->in_room->room_flags, ROOM_NOSUPPLICATE ) 
+talent.c:5214:      if( ch->curr_talent[TAL_MOTION] < 100  &&( IS_SET( ch->in_room->room_flags, ROOM_NO_ASTRAL )  ||IS_NPC( victim ) ) )
+talent.c:5558:         if( tar == ECHOTAR_AREA  &&ch->in_room->area != d->character->in_room->area )
+talent.c:5562:         if( tar == ECHOTAR_WORLD  &&str_cmp( ch->in_room->area->resetmsg, d->character->in_room->area->resetmsg ) )
+talent.c:5697:      if( ch->in_room->area->weather->temp > ch->curr_talent[TAL_FROST] * 10 - 400 )
+talent.c:5727:      if( ch->in_room->curr_vegetation < 100 - ch->curr_talent[TAL_EARTH] )
+talent.c:5788:   for( vch = ch->in_room->first_person; vch; vch = vch->next_in_room )
+track.c:51:   for( trail = ch->in_room->first_trail; trail; trail = trail->next )
+track.c:196:         for( pexit = queue_head->room->first_exit; pexit; pexit = pexit->next )
+update.c:130:   if( IS_SET( ch->in_room->runes, RUNE_LIFE ) )
+update.c:276:      i = number_range( 0, ch->in_room->area->weather->mana * 10 );
+update.c:277:   ch->in_room->area->weather->mana -= ( int )i / 10;
+update.c:336:      if( IS_SET( ch->in_room->runes, RUNE_LIFE ) )
+update.c:636:         bug( "Mob %d in room %d was not set with the NPC flag!  Fixing...", ch->pIndexData->vnum, ch->in_room->vnum );
+update.c:669:             &&( !ch->in_room || !ch->in_room->area  ||ch->in_room->area->nplayer == 0 ) )
+update.c:680:         if( ch->in_room->first_person )
+update.c:719:             &&ch->home_room != ch->in_room->vnum 
+update.c:722:             &&!ch->last_hit  &&!IS_AFFECTED( ch, AFF_CURSE )  &&!IS_SET( ch->in_room->room_flags, ROOM_NO_RECALL ) )
+update.c:763:             * ch->in_room->name );
+update.c:776:      if( IS_SET( ch->in_room->room_flags, ROOM_SAFE ) 
+update.c:786:         if( !ch->in_room->area )
+update.c:789:         bug( "Room %d for mob %s is not associated with an area?", ch->in_room->vnum, ch->name );
+update.c:791:            bug( "Was in room %d", ch->was_in_room->vnum );
+update.c:799:         if( ch->in_room->area->nplayer > 0 )
+update.c:832:             &&!IS_SET( pexit->to_room->room_flags, ROOM_NO_MOB ) 
+update.c:833:             &&( !xIS_SET( ch->act, ACT_STAY_AREA ) || pexit->to_room->area == ch->in_room->area ) )
+update.c:847:               &&( ( pexit->to_room->sector_type == SECT_WATER_NOSWIM ) 
+update.c:848:                   ||( pexit->to_room->sector_type == SECT_WATER_SWIM ) 
+update.c:849:                   ||IS_SET( pexit->to_room->room_flags, ROOM_NOFLOOR ) ) )
+update.c:851:         if( ( pexit->to_room->sector_type == SECT_WATER_NOSWIM 
+update.c:852:                 ||pexit->to_room->sector_type == SECT_WATER_SWIM 
+update.c:853:                 ||pexit->to_room->sector_type == SECT_UNDERWATER 
+update.c:854:                 ||pexit->to_room->sector_type == SECT_OCEANFLOOR ) 
+update.c:857:         if( !pexit->to_room->sector_type == SECT_WATER_NOSWIM 
+update.c:858:               &&!pexit->to_room->sector_type == SECT_WATER_SWIM 
+update.c:859:               &&!pexit->to_room->sector_type == SECT_UNDERWATER 
+update.c:860:               &&!pexit->to_room->sector_type == SECT_OCEANFLOOR 
+update.c:863:         if( pexit->to_room->sector_type == SECT_LAVA  &&!IS_SET( ch->immune, RIS_FIRE ) )
+update.c:889:             &&!IS_SET( pexit->exit_info, EX_CLOSED )  &&!IS_SET( pexit->to_room->room_flags, ROOM_NO_MOB ) )
+update.c:898:         if( ch->in_room && ch->in_room->area->weather->precip > 10  &&!IS_SET( ch->in_room->room_flags, ROOM_INDOORS ) )
+update.c:901:         for( pobj = ch->in_room->first_content; pobj; pobj = pobj->next_content )
+update.c:1060:         if( ch->in_room->first_content && IS_SET( ch->xflags, PART_HANDS ) )
+update.c:1069:            for( obj = ch->in_room->first_content; obj; obj = obj->next_content )
+update.c:1258:      if( !IS_NPC( ch ) && ch->in_room->vnum == 6 && ch->pcdata->release_date <= current_time )
+update.c:1486:      if( obj->in_room && obj->in_room->area->nplayer > 0 )
+update.c:1679:      else if( obj->in_room  &&( rch = obj->in_room->first_person ) != NULL  &&!IS_OBJ_STAT( obj, ITEM_BURIED ) )
+update.c:1689:            for( victim = rch->in_room->first_person; victim; victim = nextinroom )
+update.c:1756:                  &&!IS_SET( pexit->to_room->room_flags, ROOM_NO_MOB ) 
+update.c:1757:                  &&( !xIS_SET( ch->act, ACT_STAY_AREA )  ||pexit->to_room->area == ch->in_room->area ) )
+update.c:1796:      if( ( ch->in_room && ch->in_room->sector_type == SECT_UNDERWATER ) 
+update.c:1797:            ||( ch->in_room && ch->in_room->sector_type == SECT_OCEANFLOOR ) )
+update.c:1825:      if( ch->in_room  &&( ch->in_room->sector_type == SECT_WATER_NOSWIM ) )
+update.c:1832:              &&( ch->in_room->water > ch->height - 20 ) 
+update.c:1834:              &&!( IS_OUTSIDE( ch ) && ( ( ch->in_room->area->weather->temp + 3 * weath_unit - 1 ) / weath_unit < 3 ) ) )
+update.c:1933:      for( ch = wch->in_room->first_person; ch; ch = ch_next )
+update.c:2023:      for( vch = ch->in_room->first_person; vch; vch = vch->next_in_room )
+update.c:2239:   for( pexit = fromRoom->first_exit; pexit; pexit = pexit->next )
+update.c:2249:      bug( "remove_portal: portal not found in room %d!", fromRoom->vnum );
+update.c:2482:            && !NO_WEATHER_SECT( d->character->in_room->sector_type ) && IS_AWAKE( d->character ) )
+update.c:2486:         weath = d->character->in_room->area->weather;
+update.c:2491:         if( ( i = moon_visible( d->character->in_room->area, MOON_BLOOD ) ) 
+update.c:2492:              &&d->character->in_room->area->weather->precip > 100 )
+update.c:2911:               weath = d->character->in_room->area->weather;
+update.c:2946:            if( d->connected == CON_PLAYING && !str_cmp( d->character->in_room->area->resetmsg, moon->world )
+update.c:2960:            if( d->connected == CON_PLAYING && !str_cmp( d->character->in_room->area->resetmsg, moon->world )

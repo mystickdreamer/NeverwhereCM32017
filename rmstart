@@ -2,8 +2,8 @@
 
 # Set the port number.
 set port = 6501
-set basedir = /home/mystickdreamer/Neverwhere
-set email = "1dreaminmagick@gmail.com"
+set basedir = /home/mysticdreamer/cm3
+set email = dreaminmagick@gmail.com
 
 if ( "$1" != "" ) set port="$1"
 if ( "$2" == "newlog" ) rm $basedir/log/* 

@@ -855,7 +855,7 @@ void oedit_disp_wear_menu( DESCRIPTOR_DATA *d )
     int counter, col = 0;
 
     write_to_buffer( d, "\x1B[;H\x1B", 0 );
-    for ( counter = 0; counter <= 46; counter++ )
+    for ( counter = 0; counter <= 47; counter++ )
     {
 	//if ( 1 << counter == ITEM_DUAL_WIELD )
 	  //  continue;
