@@ -339,7 +339,7 @@ void check_bodyparts( CHAR_DATA * ch )
       /*
        * comment out if you dont want anatomically correct chars 
        */ 
-      if( ch->sex == SEX_MALE || ch->sex == SEX_HERMAPH )
+/*      if( ch->sex == SEX_MALE || ch->sex == SEX_HERMAPH )
       add_part( ch, BP_PENIS, BP_ASS );
    
    else
@@ -348,7 +348,7 @@ void check_bodyparts( CHAR_DATA * ch )
       add_part( ch, BP_VAGINA, BP_ASS );
    
    else
-      remove_part( ch, BP_VAGINA );
+      remove_part( ch, BP_VAGINA ); */
 }
 
 
