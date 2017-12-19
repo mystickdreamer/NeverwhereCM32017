@@ -1915,7 +1915,7 @@ typedef enum {
 } combat_skills;
 
 typedef enum {
-	SK_DODGE, SK_CLIMB, SK_SWIM, SK_PERCEPTION, SK_TRACK, SK_STEALTH,
+	SK_DODGE, SK_CLIMB, SK_SWIM, SK_PERCEPTION, SK_TRACK,
 	SK_LOCKPICK, SK_DISARM, SK_STEAL, SK_SKIN
 } noncraft_skills;
 
