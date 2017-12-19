@@ -665,7 +665,7 @@ void do_wear( CHAR_DATA * ch, char *argument )
    obj_to_char( obj, ch );   /* in the correct order */
    if( equip_char( ch, obj ) == FALSE )
    {
-	   act( AT_ACTION, "The mob can't wear that. $T", TO_ROOM );
+	   act( AT_ACTION, " Something went wrong $n wears $p on $s $T.", ch, obj, part_locs[obj->wear_loc], TO_ROOM );
       send_to_char( "You can't wear that.\n\r", ch );
       return;
    }
