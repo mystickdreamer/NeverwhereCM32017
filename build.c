@@ -1902,7 +1902,7 @@ void do_mset( CHAR_DATA * ch, char *argument )
          if( value < 0 || value > 31 )
             ch_printf( ch, "Unknown flag: %s\n\r", arg3 );
          else
-            TOGGLE_BIT( victim->xflags, 1 << value );
+            TOGGLE_BIT( victim->xflags, value );
       }
       if( IS_NPC( victim ) && xIS_SET( victim->act, ACT_PROTOTYPE ) )
          victim->pIndexData->xflags = victim->xflags;
