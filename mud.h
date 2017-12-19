@@ -3483,7 +3483,7 @@ extern char *const pos_names[];
 extern char *const song_name[MAX_SONG];
 extern char *const weapon_skill[];
 extern char *const noncombat_skill[];
-extern char *const noncraft_skills[];
+//extern char *const noncraft_skills[];
 
 /*
  * Global variables.
