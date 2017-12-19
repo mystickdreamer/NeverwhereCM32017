@@ -1914,7 +1914,7 @@ typedef enum {
 	SK_POLEARM, SK_CLAW, SK_FANG, SK_HEAD, SK_TAIL, SK_HAND, SK_KICK
 } combat_skills;
 
-typdef enum {
+typedef enum {
 	SK_DODGE, SK_CLIMB, SK_SWIM, SK_PERCEPTION, SK_TRACK, SK_STEALTH,
 	SK_LOCKPICK, SK_DISARM, SK_STEAL, SK_SKIN
 } noncraft_skills;
@@ -3483,6 +3483,7 @@ extern char *const pos_names[];
 extern char *const song_name[MAX_SONG];
 extern char *const weapon_skill[];
 extern char *const noncombat_skill[];
+extern char *const noncraft_skills[];
 
 /*
  * Global variables.
