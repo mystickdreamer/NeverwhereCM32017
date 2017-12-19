@@ -445,7 +445,7 @@ void do_body( CHAR_DATA * ch, char *argument )
          }
 
          /* See if any object is attached that shouldn't be */ 
-/*
+
 	 if (part->obj && part->obj->carried_by != ch)
          {
             part->obj = part->obj2;
@@ -453,7 +453,7 @@ void do_body( CHAR_DATA * ch, char *argument )
          }
          if (part->obj2 && part->obj2->carried_by != ch)
             part->obj2 = NULL;
-*/ 
+ 
 
          if( ( obj = outer_layer( part ) ) != NULL )
             pager_printf( ch, obj->short_descr ? obj->short_descr : "???" );
