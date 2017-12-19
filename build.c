@@ -104,7 +104,7 @@ char *const bp_flags[] = {
    "rpaw", "lpaw", "rwing", "lwing", "rear",
    "lear", "horn", "rhorn", "lhorn", "tongue", "fangs",
    "tentacles", "beak", "rfleg", "lfleg", "rrleg",
-   "lrleg", "ass", "face", "rfin", "lfin", "dfin",
+   "lrleg", "waist", "face", "rfin", "lfin", "dfin",
    "penis", "vagina", "claws"
 };
 
