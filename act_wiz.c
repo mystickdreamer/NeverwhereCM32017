@@ -1391,7 +1391,7 @@ void do_mstat( CHAR_DATA * ch, char *argument )
       pager_printf_color( ch, "&cParent : &C%s          ", victim->pcdata->parent );
    }
    if( victim->race < MAX_NPC_RACE && victim->race >= 0 )
-      pager_printf_color( ch, "&cRace      : &w%-2.2d/%-10s  &cHeight      : &w%-2.2d\n\r", victim->race, npc_race[victim->race], victim->position, victim->nation->height );
+      pager_printf_color( ch, "&cRace      : &w%-2.2d/%-10s  &cHeight      : &w%-2.2d\n\r", victim->race, npc_race[victim->race], victim->position, victim->height );
    else
       send_to_pager( "\n\r", ch );
    sprintf( hpbuf, "%d/%d", victim->hit, victim->max_hit );
