@@ -2276,7 +2276,7 @@ OBJ_DATA *has_key( CHAR_DATA * ch, int key )
          return obj;
       else if( obj->item_type == ITEM_KEYRING )
          for( obj2 = obj->first_content; obj2; obj2 = obj2->next_content )
-            if( obj2->item_type == ITEM_KEY )
+            if( obj2->value[0] == key )
                return obj2;
    }
 
