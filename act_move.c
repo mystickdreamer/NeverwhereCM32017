@@ -1980,8 +1980,9 @@ OBJ_DATA *has_key(CHAR_DATA * ch, int key) {
 
 	for (obj = ch->first_carrying; obj; obj = obj->next_content) {
 		//checking to see if an item is a key, and has a vnum assosiated with the lock, 
-		//then we are checking to see if they have a created key from magic
+
 		if (obj->item_type == ITEM_KEY && obj->pIndexData->vnum == key ||
+			//then we are checking to see if they have a created key from magic
 			obj->item_type == ITEM_KEY && obj->value[0] == key)
 			return obj;
 		else if (obj->item_type == ITEM_KEYRING)
