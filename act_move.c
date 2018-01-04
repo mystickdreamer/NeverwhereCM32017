@@ -2272,7 +2272,7 @@ OBJ_DATA *has_key( CHAR_DATA * ch, int key )
 
    for( obj = ch->first_carrying; obj; obj = obj->next_content )
    {
-      if( obj->item_type == ITEM_KEY && obj->value[0] == key )
+      if( obj->item_type == ITEM_KEY && obj->pIndexData->vnum == key )
          return obj;
       else if( obj->item_type == ITEM_KEYRING )
          for( obj2 = obj->first_content; obj2; obj2 = obj2->next_content )
